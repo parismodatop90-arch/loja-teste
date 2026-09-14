@@ -1,441 +1,912 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECOLÍVIA | Moda Feminina</title>
 
-<title>ECOLÍVIA | Moda Feminina</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    :root {
+      --vinho: #7A1F2B;
+      --dourado: #C6A15B;
+      --preto: #111111;
+      --branco: #ffffff;
+      --cinza: #f5f3f1;
+      --texto: #252525;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #1f1f1f;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--branco);
+    }
 
-/* BARRA SUPERIOR */
-.topo {
-  background: #7A1F2B;
-  color: white;
-  text-align: center;
-  padding: 9px;
-  font-size: 13px;
-}
+    /* FAIXA SUPERIOR */
+    .topbar {
+      background: var(--vinho);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
 
-/* CABEÇALHO */
-header {
-  background: white;
-  padding: 22px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #eeeeee;
-}
+    /* CABEÇALHO */
+    header {
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.logo {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  color: #111111;
-}
+    .header-main {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1500px;
+      margin: auto;
+      padding: 0 45px;
+    }
 
-.icones {
-  font-size: 21px;
-  display: flex;
-  gap: 20px;
-}
+    .menu-icon {
+      font-size: 22px;
+      cursor: pointer;
+    }
 
-/* MENU */
-nav {
-  background: #111111;
-  text-align: center;
-  padding: 15px;
-}
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      letter-spacing: 7px;
+      color: var(--preto);
+      font-weight: normal;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 22px;
-  font-size: 14px;
-}
+    .header-icons {
+      display: flex;
+      gap: 22px;
+      font-size: 18px;
+    }
 
-nav a:hover {
-  color: #c6a15b;
-}
+    nav {
+      border-top: 1px solid #f1f1f1;
+    }
 
-/* BANNER */
-.banner {
-  min-height: 480px;
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.18),
-      rgba(0,0,0,0.18)
-    ),
-    #e9e5e2;
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 45px;
+      padding: 16px;
+    }
 
-  display: flex;
-  align-items: center;
-  padding-left: 8%;
-}
+    nav a {
+      text-decoration: none;
+      color: var(--preto);
+      font-size: 12px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      transition: .3s;
+    }
 
-.banner-conteudo {
-  max-width: 520px;
-}
+    nav a:hover {
+      color: var(--dourado);
+    }
 
-.banner h1 {
-  font-family: Georgia, serif;
-  font-size: 52px;
-  margin-bottom: 15px;
-}
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.45),
+          rgba(0,0,0,.05)
+        ),
+        url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2000&q=85')
+        center/cover no-repeat;
 
-.banner p {
-  font-size: 18px;
-  margin-bottom: 25px;
-}
+      display: flex;
+      align-items: center;
+    }
 
-.botao {
-  display: inline-block;
-  background: #7A1F2B;
-  color: white;
-  padding: 14px 30px;
-  text-decoration: none;
-  border: 1px solid #7A1F2B;
-}
+    .hero-content {
+      color: white;
+      margin-left: 9%;
+      max-width: 600px;
+    }
 
-.botao:hover {
-  background: #c6a15b;
-  border-color: #c6a15b;
-}
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
 
-/* BENEFÍCIOS */
-.beneficios {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 25px 6%;
-  border-bottom: 1px solid #eeeeee;
-  text-align: center;
-  gap: 20px;
-}
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 64px;
+      font-weight: normal;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
 
-.beneficio strong {
-  display: block;
-  margin-bottom: 5px;
-}
+    .hero p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
 
-.beneficio span {
-  font-size: 13px;
-  color: #666666;
-}
+    .btn {
+      display: inline-block;
+      background: var(--vinho);
+      color: white;
+      text-decoration: none;
+      padding: 16px 32px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: .3s;
+      border: 1px solid var(--vinho);
+    }
 
-/* CATEGORIAS */
-.secao {
-  padding: 55px 6%;
-}
+    .btn:hover {
+      background: var(--dourado);
+      border-color: var(--dourado);
+    }
 
-.titulo {
-  text-align: center;
-  font-family: Georgia, serif;
-  font-size: 30px;
-  margin-bottom: 35px;
-}
+    /* BENEFÍCIOS */
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      max-width: 1400px;
+      margin: auto;
+      padding: 30px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
 
-.categorias {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
+    .beneficio {
+      border-right: 1px solid #ddd;
+      padding: 5px 20px;
+    }
 
-.categoria {
-  height: 330px;
-  background: #f0eeee;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 25px;
-  font-family: Georgia, serif;
-  font-size: 21px;
-  transition: 0.3s;
-}
+    .beneficio:last-child {
+      border-right: none;
+    }
 
-.categoria:hover {
-  transform: translateY(-4px);
-}
+    .beneficio strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
 
-/* PRODUTOS */
-.produtos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
+    .beneficio span {
+      color: #777;
+      font-size: 11px;
+    }
 
-.produto-foto {
-  height: 350px;
-  background: #f4f4f4;
-  margin-bottom: 15px;
-}
+    /* TÍTULOS */
+    .section-title {
+      text-align: center;
+      padding: 85px 20px 45px;
+    }
 
-.produto h3 {
-  font-size: 15px;
-  font-weight: normal;
-  margin-bottom: 8px;
-}
+    .section-title small {
+      color: var(--dourado);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
 
-.preco {
-  font-weight: bold;
-  color: #7A1F2B;
-}
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: normal;
+      margin-top: 12px;
+    }
 
-/* NEWSLETTER */
-.newsletter {
-  background: #111111;
-  color: white;
-  text-align: center;
-  padding: 55px 20px;
-}
+    /* CATEGORIAS */
+    .categorias {
+      max-width: 1450px;
+      margin: auto;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
 
-.newsletter h2 {
-  font-family: Georgia, serif;
-  margin-bottom: 10px;
-}
+    .categoria {
+      height: 570px;
+      position: relative;
+      overflow: hidden;
+      background: #eee;
+    }
 
-.newsletter p {
-  margin-bottom: 22px;
-  color: #dddddd;
-}
+    .categoria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s;
+    }
 
-.newsletter input {
-  width: 300px;
-  max-width: 70%;
-  padding: 14px;
-  border: none;
-}
+    .categoria:hover img {
+      transform: scale(1.04);
+    }
 
-.newsletter button {
-  padding: 14px 25px;
-  background: #7A1F2B;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+    .categoria-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 55px 30px 28px;
+      color: white;
+      background: linear-gradient(transparent,rgba(0,0,0,.65));
+    }
 
-/* RODAPÉ */
-footer {
-  background: #080808;
-  color: #aaaaaa;
-  text-align: center;
-  padding: 30px;
-  font-size: 13px;
-}
+    .categoria-info h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+    }
 
-/* CELULAR */
-@media (max-width: 800px) {
+    .categoria-info a {
+      color: white;
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-  header {
-    padding: 18px 20px;
-  }
+    /* EDITORIAL */
+    .editorial {
+      margin-top: 100px;
+      min-height: 570px;
+      background: var(--preto);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+    }
 
-  .logo {
-    font-size: 24px;
-  }
+    .editorial-img {
+      background:
+        url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=85')
+        center/cover;
+      min-height: 570px;
+    }
 
-  nav a {
-    display: inline-block;
-    margin: 6px 8px;
-  }
+    .editorial-text {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+    }
 
-  .banner {
-    min-height: 400px;
-    padding: 35px;
-  }
+    .editorial-text small {
+      color: var(--dourado);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
 
-  .banner h1 {
-    font-size: 38px;
-  }
+    .editorial-text h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 50px;
+      margin: 20px 0;
+    }
 
-  .beneficios {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .editorial-text p {
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
 
-  .categorias,
-  .produtos {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    /* PRODUTOS */
+    .produtos {
+      max-width: 1450px;
+      margin: auto;
+      padding: 0 30px 90px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
 
-  .categoria {
-    height: 230px;
-  }
+    .produto-img {
+      height: 430px;
+      background: #f3f3f3;
+      overflow: hidden;
+      position: relative;
+    }
 
-  .produto-foto {
-    height: 240px;
-  }
-}
-</style>
+    .produto-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .produto:hover img {
+      transform: scale(1.03);
+    }
+
+    .tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--vinho);
+      color: white;
+      padding: 7px 10px;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .produto-info {
+      padding: 17px 2px;
+    }
+
+    .produto-info h3 {
+      font-size: 13px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .preco {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .pix {
+      color: #777;
+      font-size: 10px;
+      margin-top: 5px;
+    }
+
+    /* BANNER VINHO */
+    .manifesto {
+      background: var(--vinho);
+      color: white;
+      text-align: center;
+      padding: 90px 25px;
+    }
+
+    .manifesto small {
+      color: var(--dourado);
+      letter-spacing: 4px;
+    }
+
+    .manifesto h2 {
+      font-family: Georgia, serif;
+      font-size: 45px;
+      font-weight: normal;
+      max-width: 850px;
+      margin: 20px auto;
+    }
+
+    .manifesto p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+      color: #eee;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: #f6f4f1;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      font-weight: normal;
+    }
+
+    .newsletter p {
+      margin: 15px 0 28px;
+      color: #666;
+    }
+
+    .newsletter-form {
+      max-width: 550px;
+      margin: auto;
+      display: flex;
+    }
+
+    .newsletter input {
+      flex: 1;
+      border: 1px solid #ccc;
+      background: white;
+      padding: 17px;
+      outline: none;
+    }
+
+    .newsletter button {
+      border: none;
+      background: var(--preto);
+      color: white;
+      padding: 0 28px;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--preto);
+      color: white;
+      padding: 70px 7% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+
+    footer h4 {
+      color: var(--dourado);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    footer p,
+    footer a {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 2;
+      text-decoration: none;
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      margin-top: 55px;
+      padding-top: 25px;
+      text-align: center;
+      color: #777;
+      font-size: 10px;
+    }
+
+    /* CELULAR */
+    @media(max-width: 800px) {
+
+      .header-main {
+        height: 70px;
+        padding: 0 18px;
+      }
+
+      .logo {
+        font-size: 22px;
+        letter-spacing: 4px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 560px;
+        background-position: 60% center;
+      }
+
+      .hero-content {
+        margin: 0 25px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .beneficios {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .beneficio {
+        border: none;
+      }
+
+      .categorias {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+
+      .categoria {
+        height: 500px;
+      }
+
+      .editorial {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-text {
+        padding: 55px 25px;
+      }
+
+      .editorial-text h2 {
+        font-size: 38px;
+      }
+
+      .produtos {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 12px 60px;
+        gap: 10px;
+      }
+
+      .produto-img {
+        height: 280px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .newsletter button {
+        padding: 17px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="topo">
-  FRETE GRÁTIS ACIMA DE R$ 199 • 10% OFF NA PRIMEIRA COMPRA
-</div>
-
-<header>
-  <div>☰</div>
-
-  <div class="logo">
-    ECOLÍVIA
+  <div class="topbar">
+    FRETE GRÁTIS ACIMA DE R$ 199 • ENVIO PARA TODO O BRASIL
   </div>
 
-  <div class="icones">
-    ♡
-    ♙
-    🛍
+  <header>
+
+    <div class="header-main">
+      <div class="menu-icon">☰</div>
+
+      <div class="logo">ECOLÍVIA</div>
+
+      <div class="header-icons">
+        <span>⌕</span>
+        <span>♡</span>
+        <span>♙</span>
+        <span>▢</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Novidades</a></li>
+        <li><a href="#">Blusas</a></li>
+        <li><a href="#">Calças</a></li>
+        <li><a href="#">Vestidos</a></li>
+        <li><a href="#">Conjuntos</a></li>
+        <li><a href="#">Coleções</a></li>
+        <li><a href="#">Ofertas</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-small">ECOLÍVIA • NOVA COLEÇÃO</div>
+
+      <h1>
+        Elegância para<br>
+        todos os momentos.
+      </h1>
+
+      <p>
+        Descubra uma seleção de moda feminina criada
+        para valorizar seu estilo.
+      </p>
+
+      <a class="btn" href="#">Descobrir coleção</a>
+
+    </div>
+
+  </section>
+
+
+  <section class="beneficios">
+
+    <div class="beneficio">
+      <strong>FRETE GRÁTIS</strong>
+      <span>Compras acima de R$ 199</span>
+    </div>
+
+    <div class="beneficio">
+      <strong>COMPRA SEGURA</strong>
+      <span>Pagamento 100% protegido</span>
+    </div>
+
+    <div class="beneficio">
+      <strong>TROCA FÁCIL</strong>
+      <span>Compre com tranquilidade</span>
+    </div>
+
+    <div class="beneficio">
+      <strong>ATENDIMENTO</strong>
+      <span>Estamos aqui para você</span>
+    </div>
+
+  </section>
+
+
+  <div class="section-title">
+    <small>Explore</small>
+    <h2>Compre por categoria</h2>
   </div>
-</header>
 
-<nav>
-  <a href="#">NOVIDADES</a>
-  <a href="#">BLUSAS</a>
-  <a href="#">CALÇAS</a>
-  <a href="#">VESTIDOS</a>
-  <a href="#">CONJUNTOS</a>
-  <a href="#">OFERTAS</a>
-</nav>
 
-<section class="banner">
+  <section class="categorias">
 
-  <div class="banner-conteudo">
+    <article class="categoria">
+      <img
+        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80"
+        alt="Moda feminina">
 
-    <h1>Nova Coleção</h1>
+      <div class="categoria-info">
+        <h3>Blusas</h3>
+        <a href="#">Descobrir →</a>
+      </div>
+    </article>
+
+
+    <article class="categoria">
+      <img
+        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80"
+        alt="Moda feminina">
+
+      <div class="categoria-info">
+        <h3>Vestidos</h3>
+        <a href="#">Descobrir →</a>
+      </div>
+    </article>
+
+
+    <article class="categoria">
+      <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+        alt="Moda feminina">
+
+      <div class="categoria-info">
+        <h3>Conjuntos</h3>
+        <a href="#">Descobrir →</a>
+      </div>
+    </article>
+
+  </section>
+
+
+  <section class="editorial">
+
+    <div class="editorial-img"></div>
+
+    <div class="editorial-text">
+
+      <small>Editorial ECOLÍVIA</small>
+
+      <h2>
+        Sofisticação<br>
+        sem esforço.
+      </h2>
+
+      <p>
+        Peças versáteis para acompanhar sua rotina,
+        combinando conforto, elegância e personalidade.
+      </p>
+
+      <div>
+        <a class="btn" href="#">Ver coleção</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="section-title">
+    <small>Selecionados para você</small>
+    <h2>Novidades</h2>
+  </div>
+
+
+  <section class="produtos">
+
+    <article class="produto">
+
+      <div class="produto-img">
+        <span class="tag">Novo</span>
+
+        <img
+          src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"
+          alt="Produto ECOLÍVIA">
+      </div>
+
+      <div class="produto-info">
+        <h3>Calça Feminina Pantalona</h3>
+        <div class="preco">R$ 89,90</div>
+        <div class="pix">Preço especial no PIX</div>
+      </div>
+
+    </article>
+
+
+    <article class="produto">
+
+      <div class="produto-img">
+        <span class="tag">Novo</span>
+
+        <img
+          src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80"
+          alt="Produto ECOLÍVIA">
+      </div>
+
+      <div class="produto-info">
+        <h3>Blusa Feminina Elegance</h3>
+        <div class="preco">R$ 59,90</div>
+        <div class="pix">Preço especial no PIX</div>
+      </div>
+
+    </article>
+
+
+    <article class="produto">
+
+      <div class="produto-img">
+        <span class="tag">Destaque</span>
+
+        <img
+          src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80"
+          alt="Produto ECOLÍVIA">
+      </div>
+
+      <div class="produto-info">
+        <h3>Vestido Feminino Premium</h3>
+        <div class="preco">R$ 119,90</div>
+        <div class="pix">Preço especial no PIX</div>
+      </div>
+
+    </article>
+
+
+    <article class="produto">
+
+      <div class="produto-img">
+        <span class="tag">Mais vendido</span>
+
+        <img
+          src="https://images.unsplash.com/photo-1542295665-c4e2a92e3d8e?auto=format&fit=crop&w=700&q=80"
+          alt="Produto ECOLÍVIA">
+      </div>
+
+      <div class="produto-info">
+        <h3>Conjunto Feminino</h3>
+        <div class="preco">R$ 99,90</div>
+        <div class="pix">Preço especial no PIX</div>
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <section class="manifesto">
+
+    <small>ECOLÍVIA</small>
+
+    <h2>
+      Moda que acompanha mulheres reais.
+    </h2>
 
     <p>
-      Elegância, conforto e estilo para todos os momentos.
+      Curadoria de peças femininas que unem estilo,
+      conforto e versatilidade para diferentes momentos
+      da sua vida.
     </p>
 
-    <a class="botao" href="#">
-      COMPRAR AGORA
-    </a>
+  </section>
 
-  </div>
 
-</section>
+  <section class="newsletter">
 
-<section class="beneficios">
+    <h2>Entre para o universo ECOLÍVIA</h2>
 
-  <div class="beneficio">
-    <strong>Frete Grátis</strong>
-    <span>Compras acima de R$ 199</span>
-  </div>
+    <p>
+      Cadastre-se e receba novidades, lançamentos
+      e condições especiais.
+    </p>
 
-  <div class="beneficio">
-    <strong>Compra Segura</strong>
-    <span>Pagamento protegido</span>
-  </div>
+    <form class="newsletter-form">
+      <input
+        type="email"
+        placeholder="Digite seu melhor e-mail">
 
-  <div class="beneficio">
-    <strong>Troca Fácil</strong>
-    <span>Compre com tranquilidade</span>
-  </div>
+      <button type="submit">
+        QUERO RECEBER
+      </button>
+    </form>
 
-  <div class="beneficio">
-    <strong>Atendimento</strong>
-    <span>Estamos aqui para ajudar</span>
-  </div>
+  </section>
 
-</section>
 
-<section class="secao">
+  <footer>
 
-  <h2 class="titulo">
-    Compre por Categoria
-  </h2>
+    <div class="footer-grid">
 
-  <div class="categorias">
+      <div>
+        <div class="footer-logo">ECOLÍVIA</div>
 
-    <div class="categoria">
-      BLUSAS
+        <p>
+          Moda feminina selecionada para mulheres
+          que valorizam estilo, conforto e personalidade.
+        </p>
+      </div>
+
+
+      <div>
+        <h4>Institucional</h4>
+
+        <p><a href="#">Sobre nós</a></p>
+        <p><a href="#">Fale conosco</a></p>
+        <p><a href="#">Política de privacidade</a></p>
+        <p><a href="#">Termos e condições</a></p>
+      </div>
+
+
+      <div>
+        <h4>Ajuda</h4>
+
+        <p><a href="#">Trocas e devoluções</a></p>
+        <p><a href="#">Entrega</a></p>
+        <p><a href="#">Rastrear pedido</a></p>
+        <p><a href="#">Dúvidas frequentes</a></p>
+      </div>
+
+
+      <div>
+        <h4>Siga a ECOLÍVIA</h4>
+
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">TikTok</a></p>
+        <p><a href="#">WhatsApp</a></p>
+      </div>
+
     </div>
 
-    <div class="categoria">
-      CALÇAS
+
+    <div class="copyright">
+      © 2026 ECOLÍVIA • TODOS OS DIREITOS RESERVADOS
     </div>
 
-    <div class="categoria">
-      VESTIDOS
-    </div>
-
-    <div class="categoria">
-      CONJUNTOS
-    </div>
-
-  </div>
-
-</section>
-
-<section class="secao">
-
-  <h2 class="titulo">
-    Destaques ECOLÍVIA
-  </h2>
-
-  <div class="produtos">
-
-    <div class="produto">
-      <div class="produto-foto"></div>
-      <h3>Blusa Feminina</h3>
-      <div class="preco">R$ 59,90</div>
-    </div>
-
-    <div class="produto">
-      <div class="produto-foto"></div>
-      <h3>Calça Feminina</h3>
-      <div class="preco">R$ 89,90</div>
-    </div>
-
-    <div class="produto">
-      <div class="produto-foto"></div>
-      <h3>Vestido Feminino</h3>
-      <div class="preco">R$ 99,90</div>
-    </div>
-
-    <div class="produto">
-      <div class="produto-foto"></div>
-      <h3>Conjunto Feminino</h3>
-      <div class="preco">R$ 119,90</div>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="newsletter">
-
-  <h2>Ganhe 10% OFF</h2>
-
-  <p>
-    Cadastre seu e-mail e receba novidades e ofertas da ECOLÍVIA.
-  </p>
-
-  <input
-    type="email"
-    placeholder="Digite seu e-mail"
-  >
-
-  <button>
-    QUERO 10% OFF
-  </button>
-
-</section>
-
-<footer>
-  © 2026 ECOLÍVIA • Moda Feminina • Todos os direitos reservados
-</footer>
+  </footer>
 
 </body>
 </html>
