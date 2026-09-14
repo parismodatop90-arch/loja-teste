@@ -3,838 +3,836 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ECOLÍVIA Signature | Moda Feminina</title>
+<meta name="description" content="ECOLÍVIA — Moda feminina com elegância, personalidade e estilo.">
+<title>ECOLÍVIA MAISON | Moda Feminina</title>
 
 <style>
-/* =========================================================
-   ECOLÍVIA SIGNATURE
-   ========================================================= */
-
-:root {
-  --wine: #7A1F2B;
-  --wine-dark: #54131d;
-  --gold: #C6A15B;
-  --black: #0d0d0d;
-  --cream: #f5f1eb;
-  --white: #ffffff;
-  --gray: #777;
+:root{
+  --wine:#7A1F2B;
+  --wine-deep:#501019;
+  --gold:#C6A15B;
+  --black:#0A0A0A;
+  --ivory:#F7F5F1;
+  --white:#FFF;
+  --gray:#777;
+  --line:#DDD8D0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  background: var(--white);
-  color: var(--black);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+body{
+  background:var(--ivory);
+  color:var(--black);
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
 
-a {
-  color: inherit;
+a{
+  color:inherit;
 }
 
 /* =========================
-   TOP BAR
-   ========================= */
+   TOP
+========================= */
 
-.topbar {
-  height: 34px;
-  background: var(--black);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+.top-message{
+  background:var(--wine);
+  color:#fff;
+  text-align:center;
+  padding:9px 15px;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
 /* =========================
    HEADER
-   ========================= */
+========================= */
 
-.header {
-  height: 92px;
-  background: rgba(255,255,255,.97);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 4%;
-  border-bottom: 1px solid #e8e8e8;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.header{
+  position:absolute;
+  top:33px;
+  left:0;
+  width:100%;
+  z-index:20;
+  color:white;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:30px 4%;
+  border-bottom:1px solid rgba(255,255,255,.25);
 }
 
-.menu-left {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+.header-left,
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:27px;
 }
 
-.menu-button {
-  border: 0;
-  background: transparent;
-  font-size: 22px;
-  cursor: pointer;
+.header-right{
+  justify-content:flex-end;
 }
 
-.menu-left a,
-.icons a {
-  text-decoration: none;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+.header a{
+  text-decoration:none;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.brand {
-  text-align: center;
+.menu{
+  font-size:20px;
 }
 
-.brand-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 31px;
-  letter-spacing: 8px;
-  font-weight: normal;
-}
-
-.brand-line {
-  width: 42px;
-  height: 1px;
-  background: var(--gold);
-  margin: 7px auto 0;
-}
-
-.icons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 23px;
-  font-size: 18px;
+.logo{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px;
+  letter-spacing:9px;
+  font-weight:normal;
 }
 
 /* =========================
-   HERO SIGNATURE
-   ========================= */
+   HERO
+========================= */
 
-.hero {
-  display: grid;
-  grid-template-columns: 68% 32%;
-  min-height: 700px;
-}
-
-.hero-photo {
-  position: relative;
+.hero{
+  min-height:760px;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
   background:
     linear-gradient(
-      to right,
-      rgba(0,0,0,.08),
-      rgba(0,0,0,.02)
+      90deg,
+      rgba(0,0,0,.50) 0%,
+      rgba(0,0,0,.13) 55%,
+      rgba(0,0,0,.22) 100%
     ),
-    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=88")
-    center 35% / cover no-repeat;
+    url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=2000&q=90")
+    center 30%/cover no-repeat;
 }
 
-.hero-number {
-  position: absolute;
-  top: 35px;
-  left: 38px;
-  color: white;
-  font-family: Georgia, serif;
-  font-size: 13px;
-  letter-spacing: 3px;
+.hero-copy{
+  color:white;
+  width:100%;
+  padding:0 7% 80px;
+  position:relative;
 }
 
-.hero-vertical {
-  position: absolute;
-  bottom: 50px;
-  left: 35px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: rgba(255,255,255,.9);
-  font-size: 9px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.hero-season{
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
 }
 
-.hero-panel {
-  background: var(--wine);
-  color: white;
-  padding: 70px 11%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:normal;
+  font-size:clamp(65px,9vw,140px);
+  line-height:.83;
+  letter-spacing:-4px;
+  max-width:1050px;
 }
 
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  top: 48px;
-  left: 11%;
-  width: 55px;
-  height: 1px;
-  background: var(--gold);
+.hero-bottom{
+  margin-top:42px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:30px;
 }
 
-.eyebrow {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 28px;
+.hero-description{
+  max-width:390px;
+  font-family:Georgia,serif;
+  font-size:16px;
+  line-height:1.7;
 }
 
-.hero-panel h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(45px, 4.2vw, 75px);
-  line-height: .98;
-  font-weight: normal;
-  margin-bottom: 30px;
+.lux-link{
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:3px;
+  padding:15px 0;
+  border-bottom:1px solid var(--gold);
 }
 
-.hero-panel p {
-  color: rgba(255,255,255,.82);
-  line-height: 1.8;
-  font-size: 14px;
-  max-width: 390px;
-  margin-bottom: 38px;
-}
-
-.signature-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  width: fit-content;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--gold);
-}
-
-.signature-button span {
-  color: var(--gold);
-  font-size: 18px;
+.lux-link span{
+  color:var(--gold);
+  margin-left:25px;
 }
 
 /* =========================
-   MARQUEE
-   ========================= */
+   BRAND LINE
+========================= */
 
-.signature-strip {
-  overflow: hidden;
-  background: var(--cream);
-  border-top: 1px solid #e7e0d7;
-  border-bottom: 1px solid #e7e0d7;
-  padding: 18px 0;
-  white-space: nowrap;
+.brand-line{
+  background:var(--black);
+  color:white;
+  padding:22px;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:11px;
+  letter-spacing:5px;
 }
 
-.signature-strip div {
-  font-family: Georgia, serif;
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-align: center;
-  color: #3c342d;
-}
-
-.gold-dot {
-  color: var(--gold);
-  margin: 0 35px;
+.brand-line b{
+  color:var(--gold);
+  font-weight:normal;
+  padding:0 28px;
 }
 
 /* =========================
-   INTRO
-   ========================= */
+   MANIFESTO
+========================= */
 
-.intro {
-  max-width: 1250px;
-  margin: auto;
-  padding: 125px 5% 100px;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 70px;
+.manifesto{
+  padding:145px 7%;
+  max-width:1500px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:80px;
 }
 
-.intro-index {
-  color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: 13px;
-  letter-spacing: 3px;
-  padding-top: 10px;
+.chapter{
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  padding-top:15px;
 }
 
-.intro h2 {
-  font-family: Georgia, serif;
-  font-weight: normal;
-  font-size: clamp(38px, 5vw, 72px);
-  line-height: 1.08;
-  max-width: 850px;
+.manifesto h2{
+  font-family:Georgia,serif;
+  font-size:clamp(48px,6.4vw,95px);
+  font-weight:normal;
+  line-height:1.03;
+  letter-spacing:-2px;
 }
 
-.intro h2 em {
-  color: var(--wine);
-  font-weight: normal;
+.manifesto h2 i{
+  color:var(--wine);
+  font-weight:normal;
 }
 
-.intro-copy {
-  max-width: 530px;
-  margin: 35px 0 0 auto;
-  line-height: 1.9;
-  color: #666;
-  font-size: 14px;
-}
-
-/* =========================
-   EDITORIAL CATEGORIES
-   ========================= */
-
-.collections {
-  max-width: 1500px;
-  margin: auto;
-  padding: 20px 4% 130px;
-}
-
-.collection-grid {
-  display: grid;
-  grid-template-columns: 1.18fr .82fr;
-  gap: 70px;
-  align-items: start;
-}
-
-.collection-large {
-  position: relative;
-}
-
-.collection-large img {
-  width: 100%;
-  height: 790px;
-  object-fit: cover;
-  display: block;
-}
-
-.collection-side {
-  padding-top: 130px;
-}
-
-.collection-side img {
-  width: 100%;
-  height: 540px;
-  object-fit: cover;
-  display: block;
-}
-
-.collection-caption {
-  display: grid;
-  grid-template-columns: 65px 1fr;
-  margin-top: 22px;
-}
-
-.collection-no {
-  color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: 12px;
-}
-
-.collection-caption h3 {
-  font-family: Georgia, serif;
-  font-size: 31px;
-  font-weight: normal;
-}
-
-.collection-caption p {
-  color: #777;
-  font-size: 12px;
-  line-height: 1.8;
-  margin: 10px 0 15px;
-}
-
-.collection-caption a {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid var(--black);
-  padding-bottom: 5px;
+.manifesto-text{
+  max-width:550px;
+  margin:45px 0 0 auto;
+  color:#6d6a66;
+  line-height:2;
+  font-size:13px;
 }
 
 /* =========================
-   BLACK EDITORIAL
-   ========================= */
+   COLLECTION 01
+========================= */
 
-.noir {
-  background: var(--black);
-  color: white;
-  padding: 130px 6%;
+.collection{
+  padding:0 4% 150px;
+  max-width:1600px;
+  margin:auto;
 }
 
-.noir-inner {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: .7fr 1.3fr;
-  gap: 100px;
-  align-items: center;
+.collection-layout{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:35px;
 }
 
-.noir-label {
-  align-self: start;
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.photo-main{
+  position:relative;
 }
 
-.noir-content h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(45px, 6vw, 82px);
-  font-weight: normal;
-  line-height: 1;
-  margin-bottom: 35px;
+.photo-main img{
+  width:100%;
+  height:850px;
+  object-fit:cover;
+  display:block;
 }
 
-.noir-content p {
-  color: #aaa;
-  line-height: 1.9;
-  max-width: 600px;
-  margin-bottom: 35px;
+.photo-secondary{
+  padding-top:160px;
+}
+
+.photo-secondary img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  display:block;
+}
+
+.image-number{
+  position:absolute;
+  left:25px;
+  top:25px;
+  color:white;
+  font-family:Georgia,serif;
+  font-size:11px;
+  letter-spacing:3px;
+}
+
+.collection-info{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:70px 1fr;
+}
+
+.collection-index{
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:12px;
+}
+
+.collection-info h3{
+  font-family:Georgia,serif;
+  font-size:34px;
+  font-weight:normal;
+}
+
+.collection-info p{
+  color:#777;
+  max-width:380px;
+  line-height:1.8;
+  font-size:12px;
+  margin:10px 0 18px;
+}
+
+/* =========================
+   WINE EDITORIAL
+========================= */
+
+.wine-editorial{
+  background:var(--wine);
+  color:white;
+  display:grid;
+  grid-template-columns:45% 55%;
+}
+
+.wine-copy{
+  padding:100px 12%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.wine-copy .chapter{
+  margin-bottom:40px;
+}
+
+.wine-copy h2{
+  font-family:Georgia,serif;
+  font-size:clamp(45px,5vw,75px);
+  line-height:1;
+  font-weight:normal;
+}
+
+.wine-copy p{
+  max-width:420px;
+  margin:35px 0;
+  line-height:1.9;
+  color:rgba(255,255,255,.75);
+  font-size:13px;
+}
+
+.wine-photo{
+  min-height:700px;
+  background:
+    url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1300&q=90")
+    center/cover no-repeat;
 }
 
 /* =========================
    PRODUCTS
-   ========================= */
+========================= */
 
-.products-section {
-  padding: 120px 4%;
+.shop{
+  background:white;
+  padding:140px 4%;
 }
 
-.products-heading {
-  max-width: 1400px;
-  margin: 0 auto 55px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 30px;
+.shop-head{
+  max-width:1450px;
+  margin:0 auto 60px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:end;
 }
 
-.products-heading small {
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.shop-head small{
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
 }
 
-.products-heading h2 {
-  font-family: Georgia, serif;
-  font-size: 47px;
-  font-weight: normal;
-  margin-top: 10px;
+.shop-head h2{
+  font-family:Georgia,serif;
+  font-size:54px;
+  font-weight:normal;
+  margin-top:12px;
 }
 
-.view-all {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  border-bottom: 1px solid;
-  padding-bottom: 5px;
+.products{
+  max-width:1450px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.25fr .75fr .75fr;
+  gap:18px;
 }
 
-.products {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 18px;
+.product:first-child .product-image{
+  height:670px;
 }
 
-.product {
-  min-width: 0;
+.product-image{
+  height:520px;
+  position:relative;
+  overflow:hidden;
+  background:#eee;
 }
 
-.product-image {
-  height: 500px;
-  overflow: hidden;
-  background: #f1efed;
-  position: relative;
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .8s ease;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .7s ease;
+.product:hover img{
+  transform:scale(1.025);
 }
 
-.product:hover img {
-  transform: scale(1.025);
+.product-label{
+  position:absolute;
+  top:17px;
+  left:17px;
+  background:white;
+  padding:8px 11px;
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.product-tag {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: white;
-  padding: 8px 11px;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.product-info{
+  padding:18px 2px 30px;
 }
 
-.product-info {
-  padding: 17px 2px 5px;
+.product-type{
+  color:#999;
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.product-category {
-  color: #999;
-  text-transform: uppercase;
-  font-size: 9px;
-  letter-spacing: 1.7px;
+.product-info h3{
+  font-family:Georgia,serif;
+  font-size:18px;
+  font-weight:normal;
+  margin:9px 0;
 }
 
-.product-info h3 {
-  font-family: Georgia, serif;
-  font-weight: normal;
-  font-size: 17px;
-  margin: 8px 0;
-}
-
-.product-price {
-  font-size: 12px;
-}
-
-.product-pix {
-  font-size: 10px;
-  color: #888;
-  margin-top: 5px;
+.price{
+  font-size:12px;
 }
 
 /* =========================
-   STATEMENT
-   ========================= */
+   GIANT TYPOGRAPHY
+========================= */
 
-.statement {
-  background: var(--cream);
-  padding: 140px 5%;
-  position: relative;
-  overflow: hidden;
+.giant{
+  background:var(--black);
+  color:white;
+  padding:130px 5%;
+  overflow:hidden;
 }
 
-.statement-word {
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  font-family: Georgia, serif;
-  font-size: clamp(90px, 17vw, 250px);
-  color: rgba(122,31,43,.055);
-  white-space: nowrap;
+.giant small{
+  color:var(--gold);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:9px;
 }
 
-.statement-inner {
-  max-width: 1050px;
-  margin: auto;
-  position: relative;
-  text-align: center;
+.giant-word{
+  font-family:Georgia,serif;
+  font-size:clamp(80px,17vw,250px);
+  line-height:.8;
+  letter-spacing:-8px;
+  margin:50px 0;
+  white-space:nowrap;
 }
 
-.statement-number {
-  color: var(--gold);
-  letter-spacing: 4px;
-  font-size: 10px;
+.giant-bottom{
+  border-top:1px solid #333;
+  padding-top:35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  gap:40px;
 }
 
-.statement h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(40px, 5vw, 68px);
-  font-weight: normal;
-  line-height: 1.15;
-  margin: 25px 0;
+.giant-bottom h3{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:35px;
 }
 
-.statement p {
-  max-width: 600px;
-  margin: auto;
-  color: #777;
-  line-height: 1.9;
+.giant-bottom p{
+  max-width:470px;
+  color:#999;
+  line-height:1.9;
+  font-size:12px;
 }
 
 /* =========================
-   NEWSLETTER
-   ========================= */
+   SERVICES
+========================= */
 
-.newsletter {
-  background: var(--wine);
-  color: white;
-  padding: 90px 6%;
+.services{
+  background:var(--ivory);
+  padding:80px 5%;
 }
 
-.newsletter-inner {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
+.services-inner{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
 }
 
-.newsletter small {
-  color: var(--gold);
-  letter-spacing: 4px;
-  font-size: 10px;
-  text-transform: uppercase;
+.service{
+  padding:20px 35px;
+  border-right:1px solid var(--line);
 }
 
-.newsletter h2 {
-  font-family: Georgia, serif;
-  font-weight: normal;
-  font-size: 42px;
-  margin-top: 14px;
+.service:last-child{
+  border:0;
 }
 
-.newsletter p {
-  color: rgba(255,255,255,.75);
-  line-height: 1.7;
-  margin-bottom: 25px;
+.service-number{
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:11px;
 }
 
-.newsletter-form {
-  display: flex;
-  border-bottom: 1px solid rgba(255,255,255,.7);
+.service h4{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:18px;
+  margin:15px 0 8px;
 }
 
-.newsletter input {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  background: transparent;
-  color: white;
-  padding: 15px 0;
-  outline: none;
-  font-size: 16px;
+.service p{
+  color:#777;
+  font-size:11px;
+  line-height:1.6;
 }
 
-.newsletter input::placeholder {
-  color: rgba(255,255,255,.65);
+/* =========================
+   PRIVATE LIST
+========================= */
+
+.private{
+  background:white;
+  padding:130px 6%;
 }
 
-.newsletter button {
-  border: 0;
-  background: transparent;
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 2px;
-  cursor: pointer;
+.private-inner{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+.private small{
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:4px;
+}
+
+.private h2{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:clamp(45px,6vw,80px);
+  margin:20px 0;
+}
+
+.private p{
+  color:#777;
+  max-width:550px;
+  margin:0 auto 40px;
+  line-height:1.8;
+}
+
+.form{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  border-bottom:1px solid var(--black);
+}
+
+.form input{
+  flex:1;
+  border:0;
+  background:transparent;
+  padding:18px 5px;
+  outline:none;
+  font-size:16px;
+}
+
+.form button{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--wine);
 }
 
 /* =========================
    FOOTER
-   ========================= */
+========================= */
 
-footer {
-  background: #090909;
-  color: white;
-  padding: 80px 6% 30px;
+footer{
+  background:var(--wine-deep);
+  color:white;
+  padding:90px 6% 30px;
 }
 
-.footer-main {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr repeat(3,1fr);
-  gap: 60px;
+.footer-grid{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr repeat(3,1fr);
+  gap:70px;
 }
 
-.footer-brand {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  letter-spacing: 7px;
+.footer-logo{
+  font-family:Georgia,serif;
+  font-size:32px;
+  letter-spacing:8px;
 }
 
-.footer-brand-line {
-  width: 50px;
-  height: 1px;
-  background: var(--gold);
-  margin: 18px 0;
+.gold-line{
+  width:55px;
+  height:1px;
+  background:var(--gold);
+  margin:20px 0;
 }
 
-.footer-description {
-  color: #888;
-  font-size: 12px;
-  line-height: 1.9;
-  max-width: 310px;
+.footer-about{
+  color:rgba(255,255,255,.6);
+  max-width:320px;
+  line-height:1.9;
+  font-size:11px;
 }
 
-.footer-column h4 {
-  color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+footer h4{
+  color:var(--gold);
+  font-size:8px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:22px;
 }
 
-.footer-column a {
-  display: block;
-  text-decoration: none;
-  color: #aaa;
-  font-size: 12px;
-  line-height: 2.2;
+footer a{
+  display:block;
+  color:rgba(255,255,255,.65);
+  text-decoration:none;
+  font-size:11px;
+  line-height:2.3;
 }
 
-.footer-bottom {
-  max-width: 1400px;
-  margin: 65px auto 0;
-  border-top: 1px solid #292929;
-  padding-top: 25px;
-  display: flex;
-  justify-content: space-between;
-  color: #666;
-  font-size: 9px;
-  letter-spacing: 1px;
+.footer-end{
+  max-width:1400px;
+  margin:70px auto 0;
+  padding-top:25px;
+  border-top:1px solid rgba(255,255,255,.15);
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.4);
+  font-size:8px;
+  letter-spacing:2px;
 }
 
 /* =========================
-   RESPONSIVO
-   ========================= */
+   MOBILE
+========================= */
 
-@media (max-width: 900px) {
+@media(max-width:900px){
 
-  .header {
-    height: 72px;
-    padding: 0 18px;
+  .header{
+    padding:23px 18px;
   }
 
-  .menu-left a {
-    display: none;
+  .header-left a,
+  .header-right a{
+    display:none;
   }
 
-  .brand-name {
-    font-size: 21px;
-    letter-spacing: 5px;
+  .logo{
+    font-size:21px;
+    letter-spacing:5px;
   }
 
-  .icons a:nth-child(1),
-  .icons a:nth-child(2) {
-    display: none;
+  .hero{
+    min-height:680px;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
+  .hero-copy{
+    padding:0 25px 55px;
   }
 
-  .hero-photo {
-    min-height: 500px;
+  .hero h1{
+    letter-spacing:-2px;
   }
 
-  .hero-panel {
-    padding: 80px 30px;
+  .hero-bottom{
+    align-items:start;
+    flex-direction:column;
   }
 
-  .intro {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 85px 25px;
+  .manifesto{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:90px 25px;
   }
 
-  .intro-copy {
-    margin-left: 0;
+  .manifesto-text{
+    margin-left:0;
   }
 
-  .collection-grid {
-    grid-template-columns: 1fr;
-    gap: 70px;
+  .collection{
+    padding-left:15px;
+    padding-right:15px;
   }
 
-  .collection-large img,
-  .collection-side img {
-    height: 550px;
+  .collection-layout{
+    grid-template-columns:1fr;
+    gap:70px;
   }
 
-  .collection-side {
-    padding-top: 0;
+  .photo-main img,
+  .photo-secondary img{
+    height:580px;
   }
 
-  .noir-inner {
-    grid-template-columns: 1fr;
-    gap: 35px;
+  .photo-secondary{
+    padding-top:0;
   }
 
-  .products {
-    grid-template-columns: repeat(2,1fr);
+  .wine-editorial{
+    grid-template-columns:1fr;
   }
 
-  .product-image {
-    height: 360px;
+  .wine-copy{
+    padding:80px 30px;
   }
 
-  .newsletter-inner {
-    grid-template-columns: 1fr;
-    gap: 45px;
+  .wine-photo{
+    min-height:550px;
   }
 
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .product:first-child{
+    grid-column:1 / -1;
+  }
+
+  .product:first-child .product-image{
+    height:600px;
+  }
+
+  .product-image{
+    height:350px;
+  }
+
+  .services-inner{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .service{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
   }
 }
 
-@media (max-width: 520px) {
+@media(max-width:520px){
 
-  .topbar {
-    font-size: 8px;
-    letter-spacing: 1px;
+  .hero{
+    min-height:620px;
   }
 
-  .hero-photo {
-    min-height: 430px;
+  .hero h1{
+    font-size:63px;
   }
 
-  .hero-panel h1 {
-    font-size: 45px;
+  .brand-line{
+    font-size:8px;
+    letter-spacing:2px;
   }
 
-  .collection-large img,
-  .collection-side img {
-    height: 480px;
+  .manifesto h2{
+    font-size:46px;
   }
 
-  .products-section {
-    padding-left: 12px;
-    padding-right: 12px;
+  .photo-main img,
+  .photo-secondary img{
+    height:490px;
   }
 
-  .products {
-    gap: 9px;
+  .shop{
+    padding:90px 11px;
   }
 
-  .product-image {
-    height: 285px;
+  .shop-head h2{
+    font-size:38px;
   }
 
-  .product-info h3 {
-    font-size: 14px;
+  .product:first-child .product-image{
+    height:520px;
   }
 
-  .products-heading h2 {
-    font-size: 36px;
+  .product-image{
+    height:285px;
   }
 
-  .footer-main {
-    grid-template-columns: 1fr;
+  .giant-word{
+    letter-spacing:-4px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
+  .giant-bottom{
+    flex-direction:column;
+  }
+
+  .services-inner{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-end{
+    flex-direction:column;
+    gap:10px;
   }
 }
 
@@ -843,199 +841,53 @@ footer {
 
 <body>
 
-<div class="topbar">
-  FRETE GRÁTIS ACIMA DE R$ 199 &nbsp; • &nbsp; ECOLÍVIA — MODA FEMININA
+<div class="top-message">
+  Frete grátis acima de R$ 199 • Envio para todo o Brasil
 </div>
 
 <header class="header">
 
-  <div class="menu-left">
-    <button class="menu-button" aria-label="Menu">☰</button>
+  <div class="header-left">
+    <span class="menu">☰</span>
+    <a href="#colecao">Coleções</a>
     <a href="#novidades">Novidades</a>
-    <a href="#colecoes">Coleções</a>
   </div>
 
-  <div class="brand">
-    <div class="brand-name">ECOLÍVIA</div>
-    <div class="brand-line"></div>
-  </div>
+  <div class="logo">ECOLÍVIA</div>
 
-  <div class="icons">
+  <div class="header-right">
     <a href="#">Buscar</a>
-    <a href="#">Conta</a>
+    <a href="#">Minha conta</a>
     <span>♡</span>
-    <span>▢</span>
+    <span>□</span>
   </div>
 
 </header>
-
 
 <!-- HERO -->
 
 <section class="hero">
 
-  <div class="hero-photo">
-    <div class="hero-number">01 / SIGNATURE</div>
-    <div class="hero-vertical">ECOLÍVIA — SÃO PAULO — 2026</div>
-  </div>
+  <div class="hero-copy">
 
-  <div class="hero-panel">
-
-    <div class="eyebrow">
-      Nova identidade • 2026
+    <div class="hero-season">
+      Maison ECOLÍVIA • Collection 2026
     </div>
 
     <h1>
-      Vista<br>
-      aquilo<br>
-      que é seu.
+      Feminina.<br>
+      Singular.
     </h1>
 
-    <p>
-      Uma curadoria feminina criada para mulheres
-      que encontram elegância na autenticidade.
-    </p>
+    <div class="hero-bottom">
 
-    <a class="signature-button" href="#colecoes">
-      Explorar coleção
-      <span>→</span>
-    </a>
-
-  </div>
-
-</section>
-
-
-<div class="signature-strip">
-  <div>
-    ECOLÍVIA
-    <span class="gold-dot">◆</span>
-    ELEGÂNCIA
-    <span class="gold-dot">◆</span>
-    CONFORTO
-    <span class="gold-dot">◆</span>
-    PERSONALIDADE
-    <span class="gold-dot">◆</span>
-    MODA FEMININA
-  </div>
-</div>
-
-
-<!-- INTRO -->
-
-<section class="intro">
-
-  <div class="intro-index">
-    01 — MANIFESTO
-  </div>
-
-  <div>
-
-    <h2>
-      Não seguimos apenas tendências.
-      Criamos espaço para você
-      <em>vestir sua identidade.</em>
-    </h2>
-
-    <p class="intro-copy">
-      ECOLÍVIA nasce do encontro entre feminilidade,
-      conforto e presença. Uma seleção de peças pensada
-      para acompanhar diferentes mulheres, estilos
-      e momentos.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- COLEÇÕES -->
-
-<section class="collections" id="colecoes">
-
-  <div class="collection-grid">
-
-    <article class="collection-large">
-
-      <img
-        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=88"
-        alt="Coleção feminina ECOLÍVIA">
-
-      <div class="collection-caption">
-
-        <div class="collection-no">01</div>
-
-        <div>
-          <h3>Essenciais</h3>
-
-          <p>
-            Peças versáteis para transformar
-            as combinações do dia a dia.
-          </p>
-
-          <a href="#">Descobrir coleção</a>
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <article class="collection-side">
-
-      <img
-        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=88"
-        alt="Coleção feminina ECOLÍVIA">
-
-      <div class="collection-caption">
-
-        <div class="collection-no">02</div>
-
-        <div>
-          <h3>Feminine</h3>
-
-          <p>
-            Formas, movimentos e detalhes
-            para uma elegância natural.
-          </p>
-
-          <a href="#">Ver seleção</a>
-        </div>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- EDITORIAL PRETO -->
-
-<section class="noir">
-
-  <div class="noir-inner">
-
-    <div class="noir-label">
-      02 — ECOLÍVIA EDITORIAL
-    </div>
-
-    <div class="noir-content">
-
-      <h2>
-        Menos excesso.<br>
-        Mais presença.
-      </h2>
-
-      <p>
-        Uma moda que não precisa gritar para ser percebida.
-        Texturas, proporções e detalhes que deixam cada
-        produção falar por você.
+      <p class="hero-description">
+        Peças escolhidas para mulheres que
+        transformam simplicidade em presença.
       </p>
 
-      <a class="signature-button" href="#novidades">
-        Conhecer novidades
+      <a class="lux-link" href="#colecao">
+        Descobrir a coleção
         <span>→</span>
       </a>
 
@@ -1045,207 +897,349 @@ footer {
 
 </section>
 
-
-<!-- PRODUTOS -->
-
-<section class="products-section" id="novidades">
-
-  <div class="products-heading">
-
-    <div>
-      <small>03 — Seleção da semana</small>
-      <h2>Escolhas ECOLÍVIA</h2>
-    </div>
-
-    <a class="view-all" href="#">
-      Ver tudo
-    </a>
-
-  </div>
-
-
-  <div class="products">
-
-    <article class="product">
-
-      <div class="product-image">
-        <span class="product-tag">Novo</span>
-
-        <img
-          src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
-          alt="Calça feminina">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Calças</div>
-        <h3>Calça Feminina Pantalona</h3>
-        <div class="product-price">R$ 89,90</div>
-        <div class="product-pix">Condição especial no PIX</div>
-      </div>
-
-    </article>
-
-
-    <article class="product">
-
-      <div class="product-image">
-
-        <img
-          src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=85"
-          alt="Blusa feminina">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Blusas</div>
-        <h3>Blusa Feminina Essential</h3>
-        <div class="product-price">R$ 59,90</div>
-        <div class="product-pix">Condição especial no PIX</div>
-      </div>
-
-    </article>
-
-
-    <article class="product">
-
-      <div class="product-image">
-        <span class="product-tag">Signature</span>
-
-        <img
-          src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=85"
-          alt="Vestido feminino">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Vestidos</div>
-        <h3>Vestido Feminino Signature</h3>
-        <div class="product-price">R$ 119,90</div>
-        <div class="product-pix">Condição especial no PIX</div>
-      </div>
-
-    </article>
-
-
-    <article class="product">
-
-      <div class="product-image">
-
-        <img
-          src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85"
-          alt="Conjunto feminino">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Conjuntos</div>
-        <h3>Conjunto Feminino Atelier</h3>
-        <div class="product-price">R$ 99,90</div>
-        <div class="product-pix">Condição especial no PIX</div>
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
+<div class="brand-line">
+  ECOLÍVIA <b>◆</b>
+  MODA FEMININA <b>◆</b>
+  SÃO PAULO <b>◆</b>
+  EST. 2026
+</div>
 
 <!-- MANIFESTO -->
 
-<section class="statement">
+<section class="manifesto">
 
-  <div class="statement-word">
-    ECOLÍVIA
+  <div class="chapter">
+    01 — La Maison
   </div>
 
-  <div class="statement-inner">
-
-    <div class="statement-number">
-      04 — NOSSA ESSÊNCIA
-    </div>
+  <div>
 
     <h2>
-      Feita para acompanhar
-      todas as suas versões.
+      Uma nova forma<br>
+      de vestir o <i>cotidiano.</i>
     </h2>
 
-    <p>
-      Do essencial ao marcante. Do confortável ao sofisticado.
-      A ECOLÍVIA acredita em uma moda feminina que se adapta
-      à mulher — e não o contrário.
+    <p class="manifesto-text">
+      A ECOLÍVIA acredita que elegância não depende
+      de excesso. Nossa curadoria combina conforto,
+      feminilidade e personalidade em peças feitas
+      para acompanhar diferentes momentos da mulher.
     </p>
 
   </div>
 
 </section>
 
+<!-- COLLECTION -->
 
-<!-- NEWSLETTER -->
+<section class="collection" id="colecao">
 
-<section class="newsletter">
+  <div class="collection-layout">
 
-  <div class="newsletter-inner">
+    <article class="photo-main">
 
-    <div>
+      <span class="image-number">01 / 03</span>
 
-      <small>05 — ECOLÍVIA PRIVATE</small>
+      <img
+        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1300&q=90"
+        alt="Coleção ECOLÍVIA">
 
-      <h2>
-        Entre para nossa lista.
-      </h2>
+      <div class="collection-info">
 
+        <span class="collection-index">01</span>
+
+        <div>
+          <h3>Le Quotidien</h3>
+
+          <p>
+            Essenciais femininos para criar
+            combinações elegantes todos os dias.
+          </p>
+
+          <a class="lux-link" href="#">
+            Explorar
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="photo-secondary">
+
+      <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90"
+        alt="Moda feminina ECOLÍVIA">
+
+      <div class="collection-info">
+
+        <span class="collection-index">02</span>
+
+        <div>
+          <h3>La Féminine</h3>
+
+          <p>
+            Movimento, textura e leveza
+            em uma seleção sofisticada.
+          </p>
+
+          <a class="lux-link" href="#">
+            Descobrir
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- EDITORIAL -->
+
+<section class="wine-editorial">
+
+  <div class="wine-copy">
+
+    <div class="chapter">
+      02 — L'Editorial
     </div>
 
+    <h2>
+      Elegância<br>
+      sem esforço.
+    </h2>
+
+    <p>
+      O luxo está na escolha certa.
+      Formas simples, detalhes marcantes
+      e peças que deixam espaço para
+      a sua própria personalidade.
+    </p>
+
+    <a class="lux-link" href="#novidades">
+      Ver novidades
+      <span>→</span>
+    </a>
+
+  </div>
+
+  <div class="wine-photo"></div>
+
+</section>
+
+<!-- SHOP -->
+
+<section class="shop" id="novidades">
+
+  <div class="shop-head">
+
     <div>
+      <small>03 — Curadoria ECOLÍVIA</small>
+      <h2>Les Sélections</h2>
+    </div>
 
-      <p>
-        Receba lançamentos, novidades e condições
-        especiais antes de todo mundo.
-      </p>
+    <a class="lux-link" href="#">
+      Ver tudo
+      <span>→</span>
+    </a>
 
-      <form class="newsletter-form">
+  </div>
 
-        <input
-          type="email"
-          placeholder="Seu melhor e-mail"
-          required>
+  <div class="products">
 
-        <button type="submit">
-          ENTRAR →
-        </button>
+    <article class="product">
 
-      </form>
+      <div class="product-image">
 
+        <span class="product-label">
+          Signature
+        </span>
+
+        <img
+          src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=90"
+          alt="Calça feminina ECOLÍVIA">
+
+      </div>
+
+      <div class="product-info">
+        <span class="product-type">Calças</span>
+        <h3>Calça Pantalona Signature</h3>
+        <span class="price">R$ 89,90</span>
+      </div>
+
+    </article>
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <span class="product-label">
+          Nouveau
+        </span>
+
+        <img
+          src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=90"
+          alt="Blusa feminina ECOLÍVIA">
+
+      </div>
+
+      <div class="product-info">
+        <span class="product-type">Blusas</span>
+        <h3>Blusa Essential</h3>
+        <span class="price">R$ 59,90</span>
+      </div>
+
+    </article>
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=90"
+          alt="Vestido feminino ECOLÍVIA">
+
+      </div>
+
+      <div class="product-info">
+        <span class="product-type">Vestidos</span>
+        <h3>Vestido Maison</h3>
+        <span class="price">R$ 119,90</span>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- BRAND STATEMENT -->
+
+<section class="giant">
+
+  <small>
+    04 — Identité
+  </small>
+
+  <div class="giant-word">
+    ECOLÍVIA
+  </div>
+
+  <div class="giant-bottom">
+
+    <h3>
+      Moda com identidade.
+    </h3>
+
+    <p>
+      Mais do que vestir tendências, queremos
+      criar uma experiência em que cada mulher
+      encontre peças que conversem com sua
+      própria maneira de viver e se expressar.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+  <div class="services-inner">
+
+    <div class="service">
+      <span class="service-number">01</span>
+      <h4>Frete Grátis</h4>
+      <p>Acima de R$ 199.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-number">02</span>
+      <h4>Pagamento Seguro</h4>
+      <p>Compra protegida.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-number">03</span>
+      <h4>Troca Fácil</h4>
+      <p>Compre com tranquilidade.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-number">04</span>
+      <h4>Atendimento</h4>
+      <p>Estamos aqui para você.</p>
     </div>
 
   </div>
 
 </section>
 
+<!-- PRIVATE -->
+
+<section class="private">
+
+  <div class="private-inner">
+
+    <small>
+      05 — ECOLÍVIA PRIVÉ
+    </small>
+
+    <h2>
+      Seja a primeira a descobrir.
+    </h2>
+
+    <p>
+      Receba lançamentos, coleções e condições
+      especiais diretamente no seu e-mail.
+    </p>
+
+    <form class="form">
+
+      <input
+        type="email"
+        placeholder="Seu melhor e-mail"
+        required>
+
+      <button type="submit">
+        ENTRAR →
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
 
 <!-- FOOTER -->
 
 <footer>
 
-  <div class="footer-main">
+  <div class="footer-grid">
 
     <div>
 
-      <div class="footer-brand">
+      <div class="footer-logo">
         ECOLÍVIA
       </div>
 
-      <div class="footer-brand-line"></div>
+      <div class="gold-line"></div>
 
-      <p class="footer-description">
-        Moda feminina com identidade,
-        elegância e personalidade.
+      <p class="footer-about">
+        Moda feminina com personalidade,
+        elegância e identidade.
       </p>
 
     </div>
 
+    <div>
 
-    <div class="footer-column">
-
-      <h4>Comprar</h4>
+      <h4>Collection</h4>
 
       <a href="#">Novidades</a>
       <a href="#">Blusas</a>
@@ -1255,41 +1249,38 @@ footer {
 
     </div>
 
+    <div>
 
-    <div class="footer-column">
+      <h4>Maison</h4>
 
-      <h4>Atendimento</h4>
-
+      <a href="#">Sobre nós</a>
       <a href="#">Fale conosco</a>
       <a href="#">Entrega</a>
-      <a href="#">Rastrear pedido</a>
-      <a href="#">Trocas e devoluções</a>
+      <a href="#">Trocas</a>
 
     </div>
 
+    <div>
 
-    <div class="footer-column">
+      <h4>Social</h4>
 
-      <h4>ECOLÍVIA</h4>
-
-      <a href="#">Sobre nós</a>
       <a href="#">Instagram</a>
       <a href="#">TikTok</a>
-      <a href="#">Privacidade</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Rastrear pedido</a>
 
     </div>
 
   </div>
 
-
-  <div class="footer-bottom">
+  <div class="footer-end">
 
     <span>
-      © 2026 ECOLÍVIA — TODOS OS DIREITOS RESERVADOS
+      © 2026 ECOLÍVIA
     </span>
 
     <span>
-      MODA FEMININA • BRASIL
+      SÃO PAULO • BRASIL
     </span>
 
   </div>
