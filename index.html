@@ -4,2340 +4,1110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ECOLÍVIA — Atelier 01</title>
+<title>ECOLÍVIA — Moda Feminina</title>
 
-<meta name="description"
-content="ECOLÍVIA — Moda feminina contemporânea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   ECOLÍVIA — ATELIER 01
-========================================================= */
-
 :root{
-  --wine:#741C2A;
-  --wine-dark:#401016;
-  --gold:#C6A15B;
-  --ink:#0A0A0A;
-  --paper:#F3F0E9;
-  --white:#FFFFFF;
-  --gray:#77736D;
-  --line:#D8D3CA;
+    --vinho:#7A1F2B;
+    --dourado:#C6A15B;
+    --preto:#111111;
+    --branco:#FFFFFF;
+    --creme:#F3EBDD;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
-}
-
-body.lock{
-  overflow:hidden;
+    font-family:"Montserrat",sans-serif;
+    background:#fff;
+    color:var(--preto);
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+    color:inherit;
+    text-decoration:none;
 }
 
 button{
-  font:inherit;
+    font:inherit;
 }
 
-img{
-  display:block;
-  width:100%;
+/* =========================
+   FAIXA SUPERIOR
+========================= */
+
+.topbar{
+    height:32px;
+    background:var(--vinho);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:0 15px;
 }
 
+/* =========================
+   CABEÇALHO
+========================= */
 
-/* =========================================================
-   INTRO LINE
-========================================================= */
+.header{
+    position:absolute;
+    top:32px;
+    left:0;
+    width:100%;
+    height:78px;
+    z-index:20;
 
-.topline{
-  height:31px;
-  background:var(--wine);
-  color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    padding:0 4%;
+    color:white;
 
-  text-transform:uppercase;
-  letter-spacing:2.5px;
-  font-size:8px;
+    transition:.35s ease;
 }
 
-
-/* =========================================================
-   FLOATING NAVIGATION
-========================================================= */
-
-.nav{
-  position:absolute;
-  z-index:50;
-
-  top:56px;
-  left:3%;
-  right:3%;
-
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-
-  color:white;
+.header.scrolled{
+    position:fixed;
+    top:0;
+    background:rgba(255,255,255,.97);
+    color:#111;
+    border-bottom:1px solid rgba(0,0,0,.08);
 }
 
-.nav.fixed{
-  position:fixed;
-  top:14px;
-
-  background:rgba(248,246,241,.94);
-  color:var(--ink);
-
-  padding:15px 22px;
-
-  border:1px solid rgba(0,0,0,.08);
-  backdrop-filter:blur(15px);
+.header-left,
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:28px;
 }
 
-.nav-left,
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:27px;
+.menu-circle{
+    width:42px;
+    height:42px;
+    border:1px solid currentColor;
+    border-radius:50%;
+    background:transparent;
+    color:inherit;
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
 }
 
-.nav-right{
-  justify-content:flex-end;
+.menu-circle span{
+    width:15px;
+    height:1px;
+    background:currentColor;
 }
 
-.nav a{
-  font-size:8px;
-  text-transform:uppercase;
-  letter-spacing:2px;
+.nav-link{
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
 }
 
-.nav-logo{
-  font-family:Georgia,"Times New Roman",serif;
-  letter-spacing:8px;
-  font-size:25px;
+.nav-link:hover{
+    opacity:.6;
 }
 
-.nav-menu{
-  width:38px;
-  height:38px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border:1px solid currentColor;
-  border-radius:50%;
-
-  background:transparent;
-  color:inherit;
-
-  cursor:pointer;
+.header-right button{
+    border:0;
+    background:transparent;
+    color:inherit;
+    cursor:pointer;
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
 }
 
-.nav-menu div{
-  width:14px;
-}
-
-.nav-menu span{
-  display:block;
-  height:1px;
-  background:currentColor;
-  margin:4px 0;
-}
-
-
-/* =========================================================
-   MENU FULL SCREEN
-========================================================= */
-
-.menu-screen{
-  position:fixed;
-  inset:0;
-  z-index:100;
-
-  background:var(--wine-dark);
-  color:white;
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:.45s ease;
-}
-
-.menu-screen.open{
-  opacity:1;
-  visibility:visible;
-}
-
-.menu-inner{
-  min-height:100%;
-  padding:45px 6%;
-
-  display:flex;
-  flex-direction:column;
-}
-
-.menu-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding-bottom:25px;
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
-
-.menu-brand{
-  font-family:Georgia,serif;
-  font-size:25px;
-  letter-spacing:8px;
-}
-
-.menu-close{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-
-  border:1px solid rgba(255,255,255,.5);
-  color:white;
-  background:transparent;
-
-  cursor:pointer;
-  font-size:23px;
-}
-
-.menu-body{
-  flex:1;
-
-  display:grid;
-  grid-template-columns:1fr .7fr;
-  gap:100px;
-
-  align-items:center;
-}
-
-.big-menu a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  border-bottom:1px solid rgba(255,255,255,.13);
-  padding:13px 0;
-
-  font-family:Georgia,serif;
-  font-size:clamp(34px,5vw,67px);
-}
-
-.big-menu a span{
-  font-family:Arial,sans-serif;
-  font-size:9px;
-  color:var(--gold);
-  letter-spacing:2px;
-}
-
-.menu-note{
-  border-left:1px solid rgba(255,255,255,.17);
-  padding-left:50px;
-}
-
-.menu-note small{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:8px;
-}
-
-.menu-note p{
-  margin-top:25px;
-  max-width:340px;
-
-  font-family:Georgia,serif;
-  font-size:25px;
-  line-height:1.4;
-
-  color:rgba(255,255,255,.8);
-}
-
-
-/* =========================================================
-   HERO — THREE PANEL
-========================================================= */
+/* =========================
+   HERO / SLIDER
+========================= */
 
 .hero{
-  height:790px;
-  position:relative;
-  background:var(--ink);
-
-  display:grid;
-  grid-template-columns:1.1fr .65fr 1.1fr;
-
-  overflow:hidden;
+    position:relative;
+    height:calc(100svh - 32px);
+    min-height:620px;
+    overflow:hidden;
+    background:#111;
 }
 
-.hero-panel{
-  position:relative;
-  overflow:hidden;
+.slides{
+    position:absolute;
+    inset:0;
 }
 
-.hero-panel img{
-  height:100%;
-  object-fit:cover;
+/*
+=================================================
+PARA TROCAR AS FOTOS NO FUTURO:
+VOCÊ SÓ PRECISARÁ TROCAR OS NOMES DAS IMAGENS
+NAS 3 TAGS <img> QUE ESTÃO NO HTML MAIS ABAIXO.
+=================================================
+*/
 
-  filter:saturate(.82);
-
-  transition:transform 1.2s ease;
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease, visibility 1s ease;
 }
 
-.hero:hover .hero-panel img{
-  transform:scale(1.015);
+.slide.active{
+    opacity:1;
+    visibility:visible;
 }
 
-.hero-one img{
-  object-position:center;
+.slide img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
 }
 
-.hero-two img{
-  object-position:center;
+.slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.18),
+            rgba(0,0,0,.03) 45%,
+            rgba(0,0,0,.28)
+        );
 }
 
-.hero-three img{
-  object-position:center;
+/* Logo central */
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    z-index:5;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--creme);
+    text-align:center;
+    pointer-events:none;
 }
 
-.hero-panel::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.13);
+.hero-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(72px,14vw,210px);
+    line-height:.72;
+    font-weight:500;
+    letter-spacing:.015em;
 }
 
-.hero-center{
-  position:absolute;
-  z-index:10;
-  inset:0;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-  color:white;
-
-  pointer-events:none;
+.hero-subtitle{
+    margin-top:30px;
+    font-size:10px;
+    letter-spacing:.45em;
+    text-transform:uppercase;
 }
 
-.hero-title small{
-  display:block;
+/* Setas */
 
-  color:var(--gold);
+.slider-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:8;
 
-  text-transform:uppercase;
-  letter-spacing:6px;
-  font-size:8px;
+    width:48px;
+    height:48px;
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:50%;
 
-  margin-bottom:25px;
+    background:rgba(0,0,0,.08);
+    color:white;
+    font-size:22px;
+
+    cursor:pointer;
+    transition:.25s;
 }
 
-.hero-title h1{
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:clamp(85px,13vw,190px);
-  line-height:.7;
-
-  font-weight:normal;
-  letter-spacing:-8px;
+.slider-arrow:hover{
+    background:white;
+    color:#111;
 }
 
-.hero-title h1 span{
-  display:block;
-
-  font-family:Arial,Helvetica,sans-serif;
-  font-size:.13em;
-  line-height:1;
-
-  letter-spacing:11px;
-  text-transform:uppercase;
-
-  margin-top:35px;
+.slider-prev{
+    left:28px;
 }
 
-.hero-bottom{
-  position:absolute;
-  z-index:12;
-
-  left:4%;
-  right:4%;
-  bottom:35px;
-
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-
-  color:white;
+.slider-next{
+    right:28px;
 }
 
-.hero-bottom p{
-  max-width:310px;
+/* Bolinhas */
 
-  font-family:Georgia,serif;
-  font-size:13px;
-  line-height:1.6;
+.slider-dots{
+    position:absolute;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:8;
+
+    display:flex;
+    gap:10px;
 }
 
-.circle-link{
-  width:92px;
-  height:92px;
-
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.65);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  font-size:7px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-
-  pointer-events:auto;
-
-  transition:.35s;
+.dot{
+    width:6px;
+    height:6px;
+    padding:0;
+    border:1px solid white;
+    border-radius:50%;
+    background:transparent;
+    cursor:pointer;
 }
 
-.circle-link:hover{
-  background:var(--wine);
-  border-color:var(--wine);
+.dot.active{
+    background:white;
 }
 
-
-/* =========================================================
-   HUGE MARQUEE
-========================================================= */
+/* =========================
+   FAIXA EDITORIAL
+========================= */
 
 .marquee{
-  overflow:hidden;
-
-  background:var(--paper);
-
-  padding:42px 0 35px;
-  border-bottom:1px solid var(--line);
+    overflow:hidden;
+    background:var(--preto);
+    color:white;
+    padding:16px 0;
 }
 
 .marquee-track{
-  width:max-content;
-
-  display:flex;
-  align-items:center;
-  gap:45px;
-
-  animation:move 24s linear infinite;
+    white-space:nowrap;
+    font-family:"Cormorant Garamond",serif;
+    font-size:21px;
+    letter-spacing:.08em;
+    animation:marquee 25s linear infinite;
 }
 
-.marquee span{
-  font-family:Georgia,serif;
-  font-size:70px;
-  white-space:nowrap;
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
 }
 
-.marquee i{
-  color:var(--gold);
-  font-style:normal;
-  font-size:20px;
+/* =========================
+   MANIFESTO
+========================= */
+
+.manifesto{
+    background:var(--creme);
+    padding:130px 7%;
 }
 
-@keyframes move{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+.eyebrow{
+    color:var(--vinho);
+    font-size:10px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-bottom:35px;
 }
 
-
-/* =========================================================
-   OPENING TEXT
-========================================================= */
-
-.opening{
-  max-width:1500px;
-  margin:auto;
-
-  padding:140px 5%;
-
-  display:grid;
-  grid-template-columns:.6fr 2fr .7fr;
-  gap:60px;
-  align-items:start;
+.manifesto h2{
+    max-width:1000px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(48px,7vw,105px);
+    line-height:.92;
+    font-weight:400;
 }
 
-.micro{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:8px;
+.manifesto p{
+    max-width:500px;
+    margin:45px 0 0 auto;
+    font-size:13px;
+    line-height:1.9;
+    color:#444;
 }
 
-.opening h2{
-  font-family:Georgia,serif;
+/* =========================
+   CATEGORIAS
+========================= */
 
-  font-size:clamp(47px,6vw,90px);
-  line-height:1.02;
-
-  font-weight:normal;
-  letter-spacing:-2px;
+.categories{
+    background:white;
+    padding:120px 6%;
 }
 
-.opening h2 em{
-  color:var(--wine);
-  font-weight:normal;
+.section-label{
+    font-size:10px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--vinho);
+    margin-bottom:50px;
 }
 
-.opening-side{
-  padding-top:160px;
+.category{
+    display:grid;
+    grid-template-columns:90px 1fr auto;
+    align-items:center;
+    gap:30px;
+
+    padding:32px 0;
+    border-top:1px solid #ddd;
+
+    transition:.25s;
 }
 
-.opening-side p{
-  color:var(--gray);
-
-  font-size:12px;
-  line-height:1.9;
-
-  margin-bottom:25px;
+.category:last-child{
+    border-bottom:1px solid #ddd;
 }
 
-
-/* =========================================================
-   CHAPTERS
-========================================================= */
-
-.chapters{
-  background:white;
+.category-number{
+    color:var(--dourado);
+    font-size:11px;
+    letter-spacing:.15em;
 }
 
-.chapter{
-  min-height:670px;
-
-  display:grid;
-  grid-template-columns:130px 1fr 1fr;
-
-  border-top:1px solid #ddd;
+.category-name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(44px,6vw,82px);
+    font-weight:400;
 }
 
-.chapter-number{
-  padding:40px 30px;
-
-  border-right:1px solid #ddd;
-
-  color:var(--gold);
-
-  font-family:Georgia,serif;
-  font-size:13px;
+.category-arrow{
+    font-size:28px;
+    font-weight:300;
 }
 
-.chapter-image{
-  overflow:hidden;
+.category:hover{
+    padding-left:15px;
+    color:var(--vinho);
 }
 
-.chapter-image img{
-  width:100%;
-  height:100%;
-  min-height:670px;
+/* =========================
+   FRASE DA MARCA
+========================= */
 
-  object-fit:cover;
+.signature{
+    min-height:580px;
+    background:var(--vinho);
+    color:var(--creme);
 
-  transition:transform 1s ease;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:80px 7%;
 }
 
-.chapter:hover .chapter-image img{
-  transform:scale(1.02);
+.signature-inner{
+    max-width:1000px;
 }
 
-.chapter-copy{
-  padding:75px 8%;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.signature-small{
+    font-size:10px;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    margin-bottom:35px;
 }
 
-.chapter-copy small{
-  color:var(--gold);
-
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:8px;
+.signature h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(60px,9vw,135px);
+    font-weight:400;
+    line-height:.85;
 }
 
-.chapter-copy h3{
-  font-family:Georgia,serif;
+/* =========================
+   BENEFÍCIOS
+========================= */
 
-  font-size:clamp(45px,5vw,75px);
-  font-weight:normal;
-
-  margin:22px 0;
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid #ddd;
 }
 
-.chapter-copy p{
-  color:#777;
-
-  max-width:420px;
-  line-height:1.9;
-
-  font-size:12px;
-
-  margin-bottom:35px;
+.benefit{
+    min-height:180px;
+    padding:45px 30px;
+    border-right:1px solid #ddd;
 }
 
-.line-link{
-  width:fit-content;
-
-  text-transform:uppercase;
-  letter-spacing:2.5px;
-
-  font-size:8px;
-
-  padding-bottom:7px;
-
-  border-bottom:1px solid;
+.benefit:last-child{
+    border-right:0;
 }
 
-.chapter.reverse{
-  grid-template-columns:130px 1fr 1fr;
+.benefit-number{
+    color:var(--dourado);
+    font-size:10px;
+    margin-bottom:28px;
 }
 
-.chapter.reverse .chapter-image{
-  order:3;
+.benefit h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    font-weight:500;
+    margin-bottom:10px;
 }
 
-.chapter.reverse .chapter-copy{
-  order:2;
+.benefit p{
+    font-size:11px;
+    color:#666;
+    line-height:1.6;
 }
 
-
-/* =========================================================
-   WINE EXPERIENCE
-========================================================= */
-
-.wine-world{
-  background:var(--wine);
-  color:white;
-
-  padding:130px 5%;
-
-  position:relative;
-  overflow:hidden;
-}
-
-.wine-word{
-  position:absolute;
-
-  top:-30px;
-  left:-20px;
-
-  font-family:Georgia,serif;
-
-  font-size:clamp(120px,22vw,330px);
-
-  color:rgba(255,255,255,.035);
-
-  white-space:nowrap;
-}
-
-.wine-inner{
-  position:relative;
-  z-index:2;
-
-  max-width:1400px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:.7fr 1.3fr;
-  gap:80px;
-}
-
-.wine-inner h2{
-  font-family:Georgia,serif;
-
-  font-size:clamp(55px,7vw,105px);
-  line-height:.95;
-
-  font-weight:normal;
-}
-
-.wine-content{
-  padding-top:100px;
-}
-
-.wine-content p{
-  max-width:520px;
-
-  color:rgba(255,255,255,.72);
-
-  line-height:2;
-  font-size:13px;
-
-  margin-bottom:35px;
-}
-
-
-/* =========================================================
-   PRODUCT EDIT
-========================================================= */
-
-.product-edit{
-  background:var(--paper);
-
-  padding:140px 4%;
-}
-
-.product-head{
-  max-width:1500px;
-  margin:0 auto 55px;
-
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-}
-
-.product-head h2{
-  font-family:Georgia,serif;
-
-  font-size:55px;
-  font-weight:normal;
-
-  margin-top:12px;
-}
-
-.product-row{
-  max-width:1500px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:1.35fr .75fr .75fr;
-  gap:16px;
-}
-
-.product-card{
-  min-width:0;
-}
-
-.product-photo{
-  position:relative;
-  overflow:hidden;
-
-  height:510px;
-
-  background:#e6e2dc;
-}
-
-.product-card.featured .product-photo{
-  height:680px;
-}
-
-.product-photo img{
-  height:100%;
-  object-fit:cover;
-
-  transition:transform .8s ease;
-}
-
-.product-card:hover img{
-  transform:scale(1.025);
-}
-
-.product-top{
-  position:absolute;
-
-  top:15px;
-  left:15px;
-  right:15px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.tag{
-  background:white;
-
-  padding:8px 11px;
-
-  font-size:7px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.favorite{
-  width:36px;
-  height:36px;
-
-  border-radius:50%;
-  border:0;
-
-  background:white;
-
-  cursor:pointer;
-
-  font-size:16px;
-}
-
-.product-bottom{
-  padding:17px 2px;
-}
-
-.product-bottom small{
-  color:#999;
-
-  text-transform:uppercase;
-  letter-spacing:2px;
-
-  font-size:7px;
-}
-
-.product-bottom h3{
-  font-family:Georgia,serif;
-
-  font-size:17px;
-  font-weight:normal;
-
-  margin:8px 0;
-}
-
-.product-bottom strong{
-  font-size:11px;
-  font-weight:normal;
-}
-
-
-/* =========================================================
-   SPLIT CAMPAIGN
-========================================================= */
-
-.campaign{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  min-height:720px;
-
-  background:var(--ink);
-  color:white;
-}
-
-.campaign-image{
-  background:
-  url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=90")
-  center/cover no-repeat;
-}
-
-.campaign-copy{
-  padding:100px 10%;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.campaign-copy h2{
-  font-family:Georgia,serif;
-
-  font-size:clamp(55px,6vw,90px);
-  line-height:.95;
-
-  font-weight:normal;
-
-  margin:30px 0;
-}
-
-.campaign-copy p{
-  color:#aaa;
-
-  max-width:440px;
-
-  line-height:1.9;
-  font-size:12px;
-
-  margin-bottom:35px;
-}
-
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services{
-  background:white;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  border-bottom:1px solid #ddd;
-}
-
-.service{
-  padding:55px 35px;
-
-  border-right:1px solid #ddd;
-}
-
-.service:last-child{
-  border-right:0;
-}
-
-.service span{
-  color:var(--gold);
-
-  font-family:Georgia,serif;
-  font-size:11px;
-}
-
-.service h3{
-  font-family:Georgia,serif;
-
-  font-weight:normal;
-  font-size:20px;
-
-  margin:15px 0 8px;
-}
-
-.service p{
-  color:#888;
-  font-size:10px;
-}
-
-
-/* =========================================================
+/* =========================
    NEWSLETTER
-========================================================= */
-
-.private{
-  padding:130px 5%;
-
-  background:var(--paper);
-}
-
-.private-inner{
-  max-width:1100px;
-  margin:auto;
-
-  text-align:center;
-}
-
-.private h2{
-  font-family:Georgia,serif;
-
-  font-size:clamp(50px,7vw,100px);
-  font-weight:normal;
-
-  line-height:1;
-
-  margin:25px 0;
-}
-
-.private p{
-  color:#777;
-
-  max-width:520px;
-
-  margin:0 auto 40px;
-
-  line-height:1.8;
-  font-size:12px;
-}
+========================= */
 
 .newsletter{
-  max-width:650px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:1fr auto;
-
-  border-bottom:1px solid var(--ink);
+    background:#f6f3ed;
+    padding:120px 7%;
+    text-align:center;
 }
 
-.newsletter input{
-  border:0;
-  outline:0;
-
-  background:transparent;
-
-  padding:18px 5px;
-
-  font-size:16px;
+.newsletter h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(48px,7vw,90px);
+    font-weight:400;
+    margin-bottom:20px;
 }
 
-.newsletter button{
-  border:0;
-
-  background:transparent;
-  color:var(--wine);
-
-  cursor:pointer;
-
-  text-transform:uppercase;
-  letter-spacing:3px;
-
-  font-size:8px;
+.newsletter p{
+    font-size:12px;
+    color:#555;
+    line-height:1.8;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-  background:var(--wine-dark);
-  color:white;
-
-  padding:90px 6% 30px;
+.newsletter-form{
+    max-width:580px;
+    margin:45px auto 0;
+    display:flex;
+    border-bottom:1px solid #111;
 }
 
-.footer-top{
-  max-width:1450px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:2fr repeat(3,1fr);
-
-  gap:60px;
+.newsletter-form input{
+    flex:1;
+    padding:18px 5px;
+    border:0;
+    outline:0;
+    background:transparent;
+    font-family:inherit;
 }
 
-.footer-brand{
-  font-family:Georgia,serif;
-
-  font-size:34px;
-  letter-spacing:9px;
+.newsletter-form button{
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:10px;
 }
 
-.footer-gold{
-  width:55px;
-  height:1px;
+/* =========================
+   RODAPÉ
+========================= */
 
-  background:var(--gold);
-
-  margin:20px 0;
+.footer{
+    background:#0d0d0d;
+    color:white;
+    padding:90px 6% 35px;
 }
 
-.footer-about{
-  max-width:300px;
-
-  color:rgba(255,255,255,.55);
-
-  font-size:11px;
-  line-height:1.9;
+.footer-logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(70px,13vw,190px);
+    line-height:.8;
+    color:var(--creme);
+    border-bottom:1px solid #333;
+    padding-bottom:55px;
 }
 
-.footer-column h4{
-  color:var(--gold);
-
-  text-transform:uppercase;
-  letter-spacing:3px;
-
-  font-size:8px;
-
-  margin-bottom:20px;
-}
-
-.footer-column a{
-  display:block;
-
-  color:rgba(255,255,255,.65);
-
-  font-size:11px;
-  line-height:2.3;
-}
-
-.footer-end{
-  max-width:1450px;
-
-  margin:70px auto 0;
-  padding-top:25px;
-
-  border-top:1px solid rgba(255,255,255,.14);
-
-  display:flex;
-  justify-content:space-between;
-
-  color:rgba(255,255,255,.35);
-
-  text-transform:uppercase;
-  letter-spacing:2px;
-
-  font-size:7px;
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal{
-  opacity:0;
-  transform:translateY(35px);
-
-  transition:
-  opacity .9s ease,
-  transform .9s ease;
-}
-
-.reveal.show{
-  opacity:1;
-  transform:none;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:900px){
-
-  .nav{
-    top:45px;
-    left:18px;
-    right:18px;
-  }
-
-  .nav-left a,
-  .nav-right a{
-    display:none;
-  }
-
-  .nav-logo{
-    font-size:20px;
-    letter-spacing:5px;
-  }
-
-  .hero{
-    height:700px;
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero-two{
-    display:none;
-  }
-
-  .hero-title h1{
-    font-size:100px;
-  }
-
-  .opening{
-    grid-template-columns:1fr;
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
     gap:30px;
+    margin-top:35px;
 
-    padding:90px 25px;
-  }
-
-  .opening-side{
-    padding-top:0;
-  }
-
-  .chapter,
-  .chapter.reverse{
-    grid-template-columns:65px 1fr;
-  }
-
-  .chapter-image{
-    grid-column:2;
-  }
-
-  .chapter-copy{
-    grid-column:2;
-  }
-
-  .chapter.reverse .chapter-image,
-  .chapter.reverse .chapter-copy{
-    order:initial;
-  }
-
-  .chapter-image img{
-    min-height:550px;
-  }
-
-  .wine-inner{
-    grid-template-columns:1fr;
-  }
-
-  .wine-content{
-    padding-top:0;
-  }
-
-  .product-row{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .product-card.featured{
-    grid-column:1/-1;
-  }
-
-  .product-card.featured .product-photo{
-    height:650px;
-  }
-
-  .product-photo{
-    height:390px;
-  }
-
-  .campaign{
-    grid-template-columns:1fr;
-  }
-
-  .campaign-image{
-    min-height:600px;
-  }
-
-  .services{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .menu-body{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-
-  .menu-note{
-    display:none;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-  }
+    font-size:9px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#aaa;
 }
 
+/* =========================
+   MENU MOBILE
+========================= */
 
-@media(max-width:560px){
+.mobile-menu{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:var(--vinho);
+    color:white;
 
-  .hero{
-    height:650px;
-  }
-
-  .hero-title h1{
-    font-size:72px;
-    letter-spacing:-4px;
-  }
-
-  .hero-title h1 span{
-    letter-spacing:6px;
-  }
-
-  .hero-bottom{
-    bottom:25px;
-  }
-
-  .hero-bottom p{
-    max-width:210px;
-    font-size:11px;
-  }
-
-  .circle-link{
-    width:72px;
-    height:72px;
-    font-size:6px;
-  }
-
-  .marquee span{
-    font-size:46px;
-  }
-
-  .opening h2{
-    font-size:44px;
-  }
-
-  .chapter,
-  .chapter.reverse{
-    grid-template-columns:45px 1fr;
-  }
-
-  .chapter-number{
-    padding:25px 14px;
-  }
-
-  .chapter-image img{
-    min-height:480px;
-  }
-
-  .chapter-copy{
-    padding:55px 25px;
-  }
-
-  .wine-world{
-    padding:90px 25px;
-  }
-
-  .product-edit{
-    padding:90px 10px;
-  }
-
-  .product-head h2{
-    font-size:38px;
-  }
-
-  .product-head .line-link{
-    display:none;
-  }
-
-  .product-row{
-    gap:9px;
-  }
-
-  .product-card.featured .product-photo{
-    height:520px;
-  }
-
-  .product-photo{
-    height:300px;
-  }
-
-  .product-bottom h3{
-    font-size:14px;
-  }
-
-  .campaign-image{
-    min-height:500px;
-  }
-
-  .campaign-copy{
-    padding:80px 30px;
-  }
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  .service{
-    border-right:0;
-    border-bottom:1px solid #ddd;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr;
-  }
-
-  .footer-end{
+    display:flex;
     flex-direction:column;
-    gap:10px;
-  }
+    justify-content:center;
 
-  .menu-inner{
-    padding:30px 25px;
-  }
+    padding:8%;
 
-  .big-menu a{
-    font-size:31px;
-  }
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
 }
 
+.mobile-menu.open{
+    opacity:1;
+    visibility:visible;
+}
+
+.mobile-menu a{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(45px,8vw,90px);
+    line-height:1.05;
+}
+
+.close-menu{
+    position:absolute;
+    top:35px;
+    right:5%;
+
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:35px;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:800px){
+
+    .header{
+        padding:0 20px;
+    }
+
+    .desktop-link{
+        display:none;
+    }
+
+    .header-right{
+        gap:15px;
+    }
+
+    .header-right .text-control{
+        display:none;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero-title{
+        font-size:19vw;
+    }
+
+    .hero-subtitle{
+        font-size:8px;
+        letter-spacing:.25em;
+    }
+
+    .slider-arrow{
+        width:38px;
+        height:38px;
+    }
+
+    .slider-prev{
+        left:15px;
+    }
+
+    .slider-next{
+        right:15px;
+    }
+
+    .manifesto{
+        padding:90px 25px;
+    }
+
+    .manifesto p{
+        margin:35px 0 0;
+    }
+
+    .categories{
+        padding:80px 25px;
+    }
+
+    .category{
+        grid-template-columns:45px 1fr auto;
+        gap:10px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .benefit:nth-child(2){
+        border-right:0;
+    }
+
+    .benefit{
+        border-bottom:1px solid #ddd;
+    }
+
+    .newsletter{
+        padding:90px 25px;
+    }
+
+    .footer{
+        padding:70px 25px 30px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:480px){
+
+    .topbar{
+        font-size:8px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .benefit{
+        border-right:0;
+    }
+
+    .newsletter-form{
+        display:block;
+        border-bottom:0;
+    }
+
+    .newsletter-form input{
+        width:100%;
+        border-bottom:1px solid #111;
+    }
+
+    .newsletter-form button{
+        margin-top:25px;
+    }
+}
 
 @media(prefers-reduced-motion:reduce){
 
-  *,
-  *::before,
-  *::after{
-    animation:none !important;
-    transition:none !important;
-  }
-
-  .reveal{
-    opacity:1;
-    transform:none;
-  }
-
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-
-<!-- TOP -->
-
-<div class="topline">
-  Frete grátis acima de R$ 199 • 10% off na primeira compra
+<!-- FAIXA SUPERIOR -->
+<div class="topbar">
+    FRETE GRÁTIS ACIMA DE R$ 199 &nbsp; • &nbsp; 10% OFF NA PRIMEIRA COMPRA
 </div>
 
+<!-- CABEÇALHO -->
+<header class="header" id="header">
 
-<!-- MENU FULL SCREEN -->
+    <div class="header-left">
 
-<div class="menu-screen" id="menuScreen">
+        <button class="menu-circle" id="openMenu" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+        </button>
 
-  <div class="menu-inner">
-
-    <div class="menu-head">
-
-      <div class="menu-brand">
-        ECOLÍVIA
-      </div>
-
-      <button
-        class="menu-close"
-        id="menuClose"
-        aria-label="Fechar menu">
-        ×
-      </button>
+        <a href="#categorias" class="nav-link desktop-link">Novidades</a>
+        <a href="#categorias" class="nav-link desktop-link">Coleções</a>
 
     </div>
 
-
-    <div class="menu-body">
-
-      <nav class="big-menu">
-
-        <a href="#novidades">
-          Novidades
-          <span>01</span>
-        </a>
-
-        <a href="#blusas">
-          Blusas
-          <span>02</span>
-        </a>
-
-        <a href="#calcas">
-          Calças
-          <span>03</span>
-        </a>
-
-        <a href="#vestidos">
-          Vestidos
-          <span>04</span>
-        </a>
-
-        <a href="#">
-          Conjuntos
-          <span>05</span>
-        </a>
-
-        <a href="#">
-          Ofertas
-          <span>06</span>
-        </a>
-
-      </nav>
-
-
-      <div class="menu-note">
-
-        <small>
-          ECOLÍVIA / ATELIER 01
-        </small>
-
-        <p>
-          Moda feminina para vestir
-          personalidade, presença
-          e movimento.
-        </p>
-
-      </div>
-
+    <div class="header-right">
+        <button class="text-control">Buscar</button>
+        <button class="text-control">Conta</button>
+        <button aria-label="Favoritos">♡</button>
+        <button aria-label="Sacola">Sacola (0)</button>
     </div>
-
-  </div>
-
-</div>
-
-
-<!-- NAV -->
-
-<header class="nav" id="nav">
-
-  <div class="nav-left">
-
-    <button
-      class="nav-menu"
-      id="menuOpen"
-      aria-label="Abrir menu">
-
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-
-    </button>
-
-    <a href="#novidades">
-      Novidades
-    </a>
-
-    <a href="#blusas">
-      Coleções
-    </a>
-
-  </div>
-
-
-  <a href="#" class="nav-logo">
-    ECOLÍVIA
-  </a>
-
-
-  <div class="nav-right">
-
-    <a href="#">
-      Buscar
-    </a>
-
-    <a href="#">
-      Conta
-    </a>
-
-    <span>♡</span>
-    <span>□</span>
-
-  </div>
 
 </header>
 
 
-<!-- HERO -->
+<!--
+=====================================================
+SLIDER ECOLÍVIA
+
+IMPORTANTE:
+ESTAS SÃO AS ÚNICAS 3 LINHAS QUE VOCÊ PRECISARÁ
+TROCAR QUANDO QUISER MUDAR OS BANNERS.
+=====================================================
+-->
 
 <section class="hero">
 
-  <div class="hero-panel hero-one">
+    <div class="slides" id="slides">
 
-    <img
-      src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=90"
-      alt="ECOLÍVIA coleção feminina">
+        <div class="slide active">
+            <img
+                src="ChatGPT%20Image%2014%20de%20set.%20de%202026,%2019_30_34.png"
+                alt="Coleção ECOLÍVIA">
+        </div>
 
-  </div>
+        <div class="slide">
+            <img
+                src="ChatGPT%20Image%2014%20de%20set.%20de%202026,%2019_26_43.png"
+                alt="Moda feminina ECOLÍVIA">
+        </div>
 
-
-  <div class="hero-panel hero-two">
-
-    <img
-      src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90"
-      alt="Moda feminina ECOLÍVIA">
-
-  </div>
-
-
-  <div class="hero-panel hero-three">
-
-    <img
-      src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1100&q=90"
-      alt="ECOLÍVIA editorial">
-
-  </div>
-
-
-  <div class="hero-center">
-
-    <div class="hero-title">
-
-      <small>
-        ATELIER 01 / 2026
-      </small>
-
-      <h1>
-        ECOLÍVIA
-        <span>
-          Feminine State of Mind
-        </span>
-      </h1>
+        <div class="slide">
+            <!-- DEPOIS COLOCAREMOS AQUI O NOME EXATO DA 3ª FOTO -->
+            <img
+               src="ChatGPT%20Image%2014_09_2026,%2016_49_23.png"
+                alt="Nova coleção ECOLÍVIA">
+        </div>
 
     </div>
 
-  </div>
+    <div class="hero-content">
+        <h1 class="hero-title">ECOLÍVIA</h1>
+        <p class="hero-subtitle">Feminine state of mind</p>
+    </div>
 
+    <button class="slider-arrow slider-prev" id="prevSlide" aria-label="Imagem anterior">
+        ‹
+    </button>
 
-  <div class="hero-bottom">
+    <button class="slider-arrow slider-next" id="nextSlide" aria-label="Próxima imagem">
+        ›
+    </button>
 
-    <p>
-      Uma nova linguagem de moda feminina:
-      natural, sofisticada e feita para
-      mulheres reais.
-    </p>
-
-    <a class="circle-link" href="#blusas">
-      Descobrir<br>coleção
-    </a>
-
-  </div>
+    <div class="slider-dots">
+        <button class="dot active" data-slide="0" aria-label="Banner 1"></button>
+        <button class="dot" data-slide="1" aria-label="Banner 2"></button>
+        <button class="dot" data-slide="2" aria-label="Banner 3"></button>
+    </div>
 
 </section>
 
 
-<!-- MOVING TEXT -->
-
+<!-- FAIXA -->
 <div class="marquee">
-
-  <div class="marquee-track">
-
-    <span>Vista sua identidade</span>
-    <i>◆</i>
-    <span>ECOLÍVIA</span>
-    <i>◆</i>
-    <span>Moda em movimento</span>
-    <i>◆</i>
-
-    <span>Vista sua identidade</span>
-    <i>◆</i>
-    <span>ECOLÍVIA</span>
-    <i>◆</i>
-    <span>Moda em movimento</span>
-    <i>◆</i>
-
-  </div>
-
+    <div class="marquee-track">
+        VISTA SUA IDENTIDADE &nbsp; ◆ &nbsp;
+        ECOLÍVIA &nbsp; ◆ &nbsp;
+        MODA EM MOVIMENTO &nbsp; ◆ &nbsp;
+        VISTA SUA IDENTIDADE &nbsp; ◆ &nbsp;
+        ECOLÍVIA &nbsp; ◆ &nbsp;
+        MODA EM MOVIMENTO &nbsp; ◆ &nbsp;
+        VISTA SUA IDENTIDADE &nbsp; ◆ &nbsp;
+        ECOLÍVIA &nbsp; ◆ &nbsp;
+        MODA EM MOVIMENTO
+    </div>
 </div>
 
 
-<!-- OPENING -->
+<!-- MANIFESTO -->
+<section class="manifesto">
 
-<section class="opening reveal">
-
-  <div class="micro">
-    001 / Manifesto
-  </div>
-
-
-  <h2>
-    Não é sobre<br>
-    seguir a moda.<br>
-    É sobre <em>ser vista.</em>
-  </h2>
-
-
-  <div class="opening-side">
-
-    <p>
-      Peças femininas selecionadas para acompanhar
-      diferentes corpos, estilos e momentos.
-    </p>
-
-    <a class="line-link" href="#novidades">
-      Conhecer ECOLÍVIA →
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- CHAPTER 1 -->
-
-<section class="chapters" id="blusas">
-
-  <article class="chapter reveal">
-
-    <div class="chapter-number">
-      01
-    </div>
-
-
-    <div class="chapter-image">
-
-      <img
-        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=90"
-        alt="Blusas ECOLÍVIA">
-
-    </div>
-
-
-    <div class="chapter-copy">
-
-      <small>
-        Capítulo 01
-      </small>
-
-      <h3>
-        Blusas
-      </h3>
-
-      <p>
-        Texturas leves, formas femininas e peças
-        versáteis que transformam combinações
-        simples em produções marcantes.
-      </p>
-
-      <a class="line-link" href="#">
-        Explorar blusas →
-      </a>
-
-    </div>
-
-  </article>
-
-
-  <!-- CHAPTER 2 -->
-
-  <article class="chapter reverse reveal" id="calcas">
-
-    <div class="chapter-number">
-      02
-    </div>
-
-
-    <div class="chapter-image">
-
-      <img
-        src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1200&q=90"
-        alt="Calças ECOLÍVIA">
-
-    </div>
-
-
-    <div class="chapter-copy">
-
-      <small>
-        Capítulo 02
-      </small>
-
-      <h3>
-        Calças
-      </h3>
-
-      <p>
-        Movimento, conforto e proporções pensadas
-        para criar looks contemporâneos sem
-        abrir mão da praticidade.
-      </p>
-
-      <a class="line-link" href="#">
-        Explorar calças →
-      </a>
-
-    </div>
-
-  </article>
-
-
-  <!-- CHAPTER 3 -->
-
-  <article class="chapter reveal" id="vestidos">
-
-    <div class="chapter-number">
-      03
-    </div>
-
-
-    <div class="chapter-image">
-
-      <img
-        src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=90"
-        alt="Vestidos ECOLÍVIA">
-
-    </div>
-
-
-    <div class="chapter-copy">
-
-      <small>
-        Capítulo 03
-      </small>
-
-      <h3>
-        Vestidos
-      </h3>
-
-      <p>
-        Feminilidade em diferentes formas:
-        do cotidiano às ocasiões em que você
-        quer deixar sua presença marcada.
-      </p>
-
-      <a class="line-link" href="#">
-        Explorar vestidos →
-      </a>
-
-    </div>
-
-  </article>
-
-</section>
-
-
-<!-- WINE WORLD -->
-
-<section class="wine-world">
-
-  <div class="wine-word">
-    ECOLÍVIA
-  </div>
-
-
-  <div class="wine-inner reveal">
-
-    <div class="micro">
-      002 / Identidade
-    </div>
-
-
-    <div>
-
-      <h2>
-        O luxo está<br>
-        em ser você.
-      </h2>
-
-
-      <div class="wine-content">
-
-        <p>
-          ECOLÍVIA não foi criada para vestir uma
-          única mulher. Foi criada para acompanhar
-          mulheres diferentes, em dias diferentes,
-          vivendo suas próprias histórias.
-        </p>
-
-        <a class="line-link" href="#novidades">
-          Ver nossa seleção →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="product-edit" id="novidades">
-
-  <div class="product-head reveal">
-
-    <div>
-
-      <div class="micro">
-        003 / The Edit
-      </div>
-
-      <h2>
-        Escolhas da semana
-      </h2>
-
-    </div>
-
-
-    <a class="line-link" href="#">
-      Ver todos →
-    </a>
-
-  </div>
-
-
-  <div class="product-row">
-
-
-    <!-- PRODUCT 1 -->
-
-    <article class="product-card featured reveal">
-
-      <div class="product-photo">
-
-        <img
-          src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=90"
-          alt="Calça feminina ECOLÍVIA">
-
-        <div class="product-top">
-
-          <span class="tag">
-            Signature
-          </span>
-
-          <button
-            class="favorite"
-            aria-label="Favoritar produto">
-            ♡
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="product-bottom">
-
-        <small>
-          Calças / 001
-        </small>
-
-        <h3>
-          Calça Pantalona ECOLÍVIA
-        </h3>
-
-        <strong>
-          R$ 89,90
-        </strong>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 2 -->
-
-    <article class="product-card reveal">
-
-      <div class="product-photo">
-
-        <img
-          src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=90"
-          alt="Blusa feminina ECOLÍVIA">
-
-        <div class="product-top">
-
-          <span class="tag">
-            Novo
-          </span>
-
-          <button
-            class="favorite"
-            aria-label="Favoritar produto">
-            ♡
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="product-bottom">
-
-        <small>
-          Blusas / 002
-        </small>
-
-        <h3>
-          Blusa Essential
-        </h3>
-
-        <strong>
-          R$ 59,90
-        </strong>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 3 -->
-
-    <article class="product-card reveal">
-
-      <div class="product-photo">
-
-        <img
-          src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=90"
-          alt="Vestido feminino ECOLÍVIA">
-
-        <div class="product-top">
-
-          <span class="tag">
-            Atelier
-          </span>
-
-          <button
-            class="favorite"
-            aria-label="Favoritar produto">
-            ♡
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="product-bottom">
-
-        <small>
-          Vestidos / 003
-        </small>
-
-        <h3>
-          Vestido Feminino Atelier
-        </h3>
-
-        <strong>
-          R$ 119,90
-        </strong>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- CAMPAIGN -->
-
-<section class="campaign">
-
-  <div class="campaign-image"></div>
-
-
-  <div class="campaign-copy reveal">
-
-    <div class="micro">
-      004 / ECOLÍVIA EDITORIAL
-    </div>
+    <div class="eyebrow">ECOLÍVIA / Manifesto</div>
 
     <h2>
-      Sua roupa.<br>
-      Sua linguagem.
+        Não é sobre seguir a moda.<br>
+        É sobre ser vista.
     </h2>
 
     <p>
-      A peça certa não muda quem você é.
-      Ela apenas deixa sua personalidade
-      ainda mais evidente.
+        Peças femininas escolhidas para acompanhar mulheres que
+        transformam o cotidiano em expressão. Elegância, presença
+        e personalidade em cada detalhe.
     </p>
-
-    <a class="line-link" href="#">
-      Descobrir coleção →
-    </a>
-
-  </div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- CATEGORIAS -->
+<section class="categories" id="categorias">
 
-<section class="services">
+    <div class="section-label">Explore a coleção</div>
 
-  <article class="service">
-    <span>01</span>
-    <h3>Frete grátis</h3>
-    <p>Acima de R$ 199.</p>
-  </article>
+    <a href="#" class="category">
+        <span class="category-number">01</span>
+        <span class="category-name">Blusas</span>
+        <span class="category-arrow">↗</span>
+    </a>
 
-  <article class="service">
-    <span>02</span>
-    <h3>Compra segura</h3>
-    <p>Pagamento protegido.</p>
-  </article>
+    <a href="#" class="category">
+        <span class="category-number">02</span>
+        <span class="category-name">Calças</span>
+        <span class="category-arrow">↗</span>
+    </a>
 
-  <article class="service">
-    <span>03</span>
-    <h3>Troca fácil</h3>
-    <p>Compre com tranquilidade.</p>
-  </article>
+    <a href="#" class="category">
+        <span class="category-number">03</span>
+        <span class="category-name">Vestidos</span>
+        <span class="category-arrow">↗</span>
+    </a>
 
-  <article class="service">
-    <span>04</span>
-    <h3>Atendimento</h3>
-    <p>Estamos aqui para você.</p>
-  </article>
+    <a href="#" class="category">
+        <span class="category-number">04</span>
+        <span class="category-name">Conjuntos</span>
+        <span class="category-arrow">↗</span>
+    </a>
+
+</section>
+
+
+<!-- ASSINATURA -->
+<section class="signature">
+
+    <div class="signature-inner">
+
+        <div class="signature-small">
+            ECOLÍVIA / São Paulo
+        </div>
+
+        <h2>
+            Sua presença.<br>
+            Sua assinatura.
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+
+    <div class="benefit">
+        <div class="benefit-number">01</div>
+        <h3>Frete grátis</h3>
+        <p>Em compras acima de R$ 199.</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-number">02</div>
+        <h3>Compra segura</h3>
+        <p>Pagamento protegido durante sua compra.</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-number">03</div>
+        <h3>Troca fácil</h3>
+        <p>Uma experiência simples do início ao fim.</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-number">04</div>
+        <h3>Atendimento</h3>
+        <p>Estamos aqui para ajudar quando precisar.</p>
+    </div>
 
 </section>
 
 
 <!-- NEWSLETTER -->
+<section class="newsletter">
 
-<section class="private reveal">
+    <div class="eyebrow">Private List</div>
 
-  <div class="private-inner">
-
-    <div class="micro">
-      005 / Private List
-    </div>
-
-    <h2>
-      Entre para<br>
-      o universo ECOLÍVIA.
-    </h2>
+    <h2>Entre para o universo ECOLÍVIA.</h2>
 
     <p>
-      Novidades, lançamentos e condições
-      especiais para quem acompanha
-      a ECOLÍVIA de perto.
+        Receba novidades, lançamentos e condições especiais.
     </p>
 
+    <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input
+            type="email"
+            placeholder="Seu melhor e-mail"
+            aria-label="Seu e-mail"
+            required>
 
-    <form class="newsletter" id="newsletter">
-
-      <input
-        type="email"
-        placeholder="Seu melhor e-mail"
-        required>
-
-      <button type="submit">
-        Quero entrar →
-      </button>
-
+        <button type="submit">
+            Quero participar →
+        </button>
     </form>
-
-  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- RODAPÉ -->
+<footer class="footer">
 
-<footer>
-
-  <div class="footer-top">
-
-    <div>
-
-      <div class="footer-brand">
+    <div class="footer-logo">
         ECOLÍVIA
-      </div>
-
-      <div class="footer-gold"></div>
-
-      <p class="footer-about">
-        Moda feminina com personalidade,
-        conforto e presença.
-      </p>
-
     </div>
 
-
-    <div class="footer-column">
-
-      <h4>Comprar</h4>
-
-      <a href="#">Novidades</a>
-      <a href="#">Blusas</a>
-      <a href="#">Calças</a>
-      <a href="#">Vestidos</a>
-      <a href="#">Conjuntos</a>
-
+    <div class="footer-bottom">
+        <span>Moda feminina • Brasil</span>
+        <span>Instagram • Atendimento • Políticas</span>
+        <span>© 2026 ECOLÍVIA</span>
     </div>
-
-
-    <div class="footer-column">
-
-      <h4>Atendimento</h4>
-
-      <a href="#">Fale conosco</a>
-      <a href="#">Entrega</a>
-      <a href="#">Rastrear pedido</a>
-      <a href="#">Trocas e devoluções</a>
-
-    </div>
-
-
-    <div class="footer-column">
-
-      <h4>ECOLÍVIA</h4>
-
-      <a href="#">Sobre nós</a>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Privacidade</a>
-
-    </div>
-
-  </div>
-
-
-  <div class="footer-end">
-
-    <span>
-      © 2026 ECOLÍVIA
-    </span>
-
-    <span>
-      MODA FEMININA • BRASIL
-    </span>
-
-  </div>
 
 </footer>
 
 
+<!-- MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">
+        ×
+    </button>
+
+    <a href="#categorias">Novidades</a>
+    <a href="#categorias">Blusas</a>
+    <a href="#categorias">Calças</a>
+    <a href="#categorias">Vestidos</a>
+    <a href="#categorias">Conjuntos</a>
+
+</div>
+
+
 <script>
 
-/* =========================================================
-   MENU
-========================================================= */
+/* =============================================
+   SLIDER
+   Troca automática a cada 5 segundos.
+============================================= */
 
-const menuOpen =
-document.getElementById("menuOpen");
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 
-const menuClose =
-document.getElementById("menuClose");
+const nextButton = document.getElementById("nextSlide");
+const prevButton = document.getElementById("prevSlide");
 
-const menuScreen =
-document.getElementById("menuScreen");
+let currentSlide = 0;
+let sliderTimer;
 
-function openNavigation(){
+function showSlide(index){
 
-  menuScreen.classList.add("open");
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
 
-  document.body.classList.add("lock");
+    currentSlide = (index + slides.length) % slides.length;
 
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
 }
 
-function closeNavigation(){
-
-  menuScreen.classList.remove("open");
-
-  document.body.classList.remove("lock");
-
+function nextSlide(){
+    showSlide(currentSlide + 1);
 }
 
-menuOpen.addEventListener(
-  "click",
-  openNavigation
-);
+function previousSlide(){
+    showSlide(currentSlide - 1);
+}
 
-menuClose.addEventListener(
-  "click",
-  closeNavigation
-);
+function startSlider(){
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(nextSlide,5000);
+}
 
-document
-.querySelectorAll(".big-menu a")
-.forEach(link=>{
+nextButton.addEventListener("click",function(){
+    nextSlide();
+    startSlider();
+});
 
-  link.addEventListener(
-    "click",
-    closeNavigation
-  );
+prevButton.addEventListener("click",function(){
+    previousSlide();
+    startSlider();
+});
+
+dots.forEach(function(dot){
+
+    dot.addEventListener("click",function(){
+
+        const index = Number(this.dataset.slide);
+
+        showSlide(index);
+        startSlider();
+
+    });
 
 });
 
+startSlider();
 
-/* =========================================================
-   FLOATING NAV
-========================================================= */
 
-const nav =
-document.getElementById("nav");
+/* =============================================
+   CABEÇALHO
+============================================= */
 
-window.addEventListener(
-  "scroll",
-  ()=>{
+const header = document.getElementById("header");
 
-    if(window.scrollY > 650){
+window.addEventListener("scroll",function(){
 
-      nav.classList.add("fixed");
-
+    if(window.scrollY > 80){
+        header.classList.add("scrolled");
     }else{
-
-      nav.classList.remove("fixed");
-
+        header.classList.remove("scrolled");
     }
-
-  }
-);
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealItems =
-document.querySelectorAll(".reveal");
-
-if("IntersectionObserver" in window){
-
-  const observer =
-  new IntersectionObserver(
-
-    entries=>{
-
-      entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-          entry.target
-          .classList
-          .add("show");
-
-          observer.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-
-    {
-      threshold:.12
-    }
-
-  );
-
-  revealItems.forEach(item=>{
-    observer.observe(item);
-  });
-
-}else{
-
-  revealItems.forEach(item=>{
-    item.classList.add("show");
-  });
-
-}
-
-
-/* =========================================================
-   FAVORITES
-========================================================= */
-
-document
-.querySelectorAll(".favorite")
-.forEach(button=>{
-
-  button.addEventListener(
-    "click",
-    ()=>{
-
-      const selected =
-      button.textContent.trim()
-      === "♥";
-
-      button.textContent =
-      selected ? "♡" : "♥";
-
-      button.style.color =
-      selected ? "" : "#741C2A";
-
-    }
-  );
 
 });
 
 
-/* =========================================================
-   NEWSLETTER
-========================================================= */
+/* =============================================
+   MENU
+============================================= */
 
-const newsletter =
-document.getElementById("newsletter");
+const mobileMenu = document.getElementById("mobileMenu");
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
 
-newsletter.addEventListener(
-  "submit",
-  event=>{
+openMenu.addEventListener("click",function(){
+    mobileMenu.classList.add("open");
+});
 
-    event.preventDefault();
+closeMenu.addEventListener("click",function(){
+    mobileMenu.classList.remove("open");
+});
 
-    const button =
-    newsletter.querySelector("button");
+mobileMenu.querySelectorAll("a").forEach(function(link){
 
-    button.textContent =
-    "Cadastrado ✓";
+    link.addEventListener("click",function(){
+        mobileMenu.classList.remove("open");
+    });
 
-  }
-);
+});
 
 </script>
 
